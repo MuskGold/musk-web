@@ -160,7 +160,7 @@ export const Footer = ({ setIsScroll }: FooterProps) => {
               <LinkImage src={Images.SocialReddit} />
               Reddit
             </SocialLink>
-            <SocialLink href="https://t.me/muskgoldcrypto">
+            <SocialLink href="https://t.me/muskgold">
               <LinkImage src={Images.SocialTelegram} />
               Telegram
             </SocialLink>
