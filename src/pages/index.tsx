@@ -10,6 +10,7 @@ import { SideNavBar } from '../components/SideNavBar';
 import { SnapLayout } from '../components/SnapLayout';
 import { Spaceflight } from '../components/Spaceflight';
 import { Splash } from '../components/Splash';
+import { Swaps } from '../components/Swaps';
 import { Whitepaper } from '../components/Whitepaper';
 import { QueryProps } from '../interfaces';
 
@@ -29,12 +30,14 @@ export default ({ data }: QueryProps) => {
   const whitePaperRef = useRef<HTMLDivElement>(null);
   const launchPrepRef = useRef<HTMLDivElement>(null);
   const spaceflightRef = useRef<HTMLDivElement>(null);
+  const swapsRef = useRef<HTMLDivElement>(null);
   const anchors = {
     '#home': splashRef,
     '#mission': missionRef,
     '#whitepaper': whitePaperRef,
     '#launchprep': launchPrepRef,
     '#spaceflight': spaceflightRef,
+    '#swaps': swapsRef,
   };
   const copyNodes = data.allMarkdownRemark.nodes;
   return (
@@ -62,6 +65,9 @@ export default ({ data }: QueryProps) => {
       </Section>
       <Section id="spaceflight" ref={spaceflightRef}>
         <Spaceflight copyNodes={copyNodes} />
+      </Section>
+      <Section id="swaps" ref={swapsRef}>
+        <Swaps />
       </Section>
     </SnapLayout>
   );
