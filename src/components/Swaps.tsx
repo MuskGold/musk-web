@@ -29,12 +29,6 @@ const MainTitle = styled.h1`
   margin: 0;
 `;
 
-const Title = styled.h2`
-  font-family: 'Lato';
-  color: #5e5e5b;
-  margin: 0;
-`;
-
 const SwapLink = styled.a`
   font-family: 'Lato';
   color: #e20900;
@@ -47,37 +41,31 @@ const SwapLink = styled.a`
   }
 `;
 
-const SubTitle = styled.h3`
-  font-family: 'Lato';
-  color: #787877;
-  margin: 0;
-`;
-
 export const Swaps = () => {
   return (
     <Container>
       <Content>
         <MainTitle>$MUSK Gold available now</MainTitle>
-        <Title>Find our live Auction on Copper Launch:</Title>
-        <StaticImage
-          src="../assets/images/copper-launch.png"
-          alt="Copper Launch"
-          layout="fixed"
-          width={165}
-          height={70}
-        />
-        <SwapLink href="https://copperlaunch.com/auctions/0x8175C3893a54238E0f1350075D17C177BF789A24">
-          $MUSK on CopperLaunch
+        <a
+          href="https://app.uniswap.org/#/swap?outputCurrency=0x6069c9223e8a5da1ec49ac5525d4bb757af72cd8"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <StaticImage
+            src="../assets/images/uniswap.png"
+            alt="Uniswap"
+            layout="fixed"
+            width={300}
+            height={70}
+          />
+        </a>
+        <SwapLink
+          href="https://app.uniswap.org/#/swap?outputCurrency=0x6069c9223e8a5da1ec49ac5525d4bb757af72cd8"
+          target="_blank"
+          rel="noreferrer"
+        >
+          $MUSK on Uniswap
         </SwapLink>
-        <Title>Upcoming Uniswap</Title>
-        <StaticImage
-          src="../assets/images/uniswap.png"
-          alt="Uniswap"
-          layout="fixed"
-          width={300}
-          height={70}
-        />
-        <SubTitle>on Wednesday, December 15th</SubTitle>
       </Content>
     </Container>
   );

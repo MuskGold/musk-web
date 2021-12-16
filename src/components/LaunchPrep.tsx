@@ -132,7 +132,7 @@ const AltCol = styled.div`
 
 const AltGrid = styled.div`
   display: grid;
-  grid-template-rows: 18% 1fr;
+  grid-template-rows: 18% 1fr auto;
   background: #fff;
 `;
 
@@ -225,6 +225,41 @@ const StyledIframe = styled.iframe`
   position: absolute;
 `;
 
+const Contract = styled.div`
+  font-size: 16px;
+  font-family: 'Lato';
+  margin-bottom: 30px;
+  color: #8e8f90;
+  padding: 10%;
+`;
+
+const ContractTitle = styled.div``;
+
+const ContractCode = styled.div``;
+
+const ContractInput = styled.input`
+  font-size: 16px;
+  font-family: 'Lato';
+  color: #545556;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 10px 0;
+`;
+
+const ContractLink = styled.a`
+  font-size: 16px;
+  font-family: 'Lato';
+  color: #e20900;
+  text-decoration: none;
+  padding: 10px 0;
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
 export const LaunchPrep = () => (
   <Container>
     <TopBars>
@@ -274,6 +309,19 @@ export const LaunchPrep = () => (
             <AltItem>Swap your Ethereum for Musk Gold</AltItem>
             <AltItem>You are now ready for Spaceflight</AltItem>
           </AltList>
+          <Contract>
+            <ContractCode>
+              <ContractTitle>Contract:</ContractTitle>
+              <ContractInput value="0x6069c9223e8a5da1ec49ac5525d4bb757af72cd8" />
+            </ContractCode>
+            <ContractLink
+              href="https://etherscan.io/address/0x6069c9223e8a5da1ec49ac5525d4bb757af72cd8"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Etherscan
+            </ContractLink>
+          </Contract>
         </AltGrid>
       </AltCol>
       <FinCol>
