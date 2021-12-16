@@ -230,7 +230,10 @@ const Contract = styled.div`
   font-family: 'Lato';
   margin-bottom: 30px;
   color: #8e8f90;
-  padding: 10%;
+  padding: 5%;
+  @media (min-width: 768px) {
+    padding-left: 10%;
+  }
 `;
 
 const ContractTitle = styled.div``;
@@ -245,6 +248,9 @@ const ContractInput = styled.input`
   border: 0;
   outline: 0;
   padding: 10px 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 `;
 
 const ContractLink = styled.a`
