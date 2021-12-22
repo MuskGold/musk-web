@@ -1,3 +1,4 @@
+import FlightPathSide from '../assets/images/flight-path-side.jpg';
 import JezeroCrater from '../assets/images/jezero-crater.jpg';
 import LaunchPrepGlass from '../assets/images/launch-prep-glass.jpg';
 import MuskNavIconGray from '../assets/images/musk-nav-icon-gray.png';
@@ -12,6 +13,7 @@ import SocialReddit from '../assets/images/social-reddit.png';
 import SocialTelegram from '../assets/images/social-telegram.png';
 import SocialTwitter from '../assets/images/social-twitter.png';
 import SpaceFlightBg from '../assets/images/spaceflight-bg.jpg';
+import SphereLines from '../assets/images/sphere-lines.png';
 import SplashBg from '../assets/images/splash-bg.jpg';
 import SplashLeftPlanet from '../assets/images/splash-left-planet.png';
 import SplashPlanet from '../assets/images/splash-planet.png';
@@ -22,6 +24,7 @@ import WhitePaperBgPosterMob from '../assets/images/white-paper-bg-poster-mob.jp
 import WhitePaperBgPoster from '../assets/images/white-paper-bg-poster.jpg';
 
 export const Images = {
+  FlightPathSide,
   JezeroCrater,
   LaunchPrepGlass,
   MuskNavIcon,
@@ -36,6 +39,7 @@ export const Images = {
   SocialTelegram,
   SocialTwitter,
   SpaceFlightBg,
+  SphereLines,
   SplashBg,
   SplashLeftPlanet,
   SplashPlanet,

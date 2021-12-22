@@ -165,6 +165,9 @@ export const NavBar = ({ snapRef, anchors, setIsScroll }: NavBarProps) => {
             <wbr />
             flight
           </NavLink>
+          <NavLink href="#flightpath" onClick={scrollTo}>
+            Flight Path
+          </NavLink>
         </NavLinks>
       </NavContent>
     </Grid>

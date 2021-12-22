@@ -147,29 +147,41 @@ export const Footer = ({ setIsScroll }: FooterProps) => {
       <Content>
         <Grid>
           <TopLinkSet>
-            <TopLink href="#" onClick={onClick}>
-              <FooterIcon src={Images.MuskNavIconGray} />
+            <TopLink href="#" onClick={onClick} title="To the top">
+              <FooterIcon src={Images.MuskNavIconGray} alt="To the top" />
             </TopLink>
           </TopLinkSet>
           <LinkSet>
-            <SocialLink href="https://twitter.com/Muskgold">
-              <LinkImage src={Images.SocialTwitter} />
+            <SocialLink
+              href="https://twitter.com/Muskgold"
+              title="Musk Gold Twitter"
+            >
+              <LinkImage src={Images.SocialTwitter} alt="Musk Gold Twitter" />
               Twitter
             </SocialLink>
-            <SocialLink href="https://www.reddit.com/r/Muskgold/">
-              <LinkImage src={Images.SocialReddit} />
+            <SocialLink
+              href="https://www.reddit.com/r/Muskgold/"
+              title="Musk Gold Reddit"
+            >
+              <LinkImage src={Images.SocialReddit} alt="Musk Gold Reddit" />
               Reddit
             </SocialLink>
-            <SocialLink href="https://t.me/muskgold">
-              <LinkImage src={Images.SocialTelegram} />
+            <SocialLink href="https://t.me/muskgold" title="Musk Gold Telegram">
+              <LinkImage src={Images.SocialTelegram} alt="Musk Gold Telegram" />
               Telegram
             </SocialLink>
-            <SocialLink href="https://discord.gg/UhvXyMQPmK">
-              <LinkImage src={Images.SocialDiscord} />
+            <SocialLink
+              href="https://discord.gg/UhvXyMQPmK"
+              title="Musk Gold Discord"
+            >
+              <LinkImage src={Images.SocialDiscord} alt="Musk Gold Discord" />
               Discord
             </SocialLink>
-            <SocialLink href="https://github.com/MuskGold">
-              <LinkImage src={Images.SocialGithub} />
+            <SocialLink
+              href="https://github.com/MuskGold"
+              title="Musk Gold Github"
+            >
+              <LinkImage src={Images.SocialGithub} alt="Musk Gold Github" />
               Github
             </SocialLink>
           </LinkSet>

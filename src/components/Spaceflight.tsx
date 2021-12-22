@@ -130,7 +130,7 @@ export const Spaceflight = ({ copyNodes }: SpaceflightProps) => {
   useEffect(init, [init]);
   return (
     <Container>
-      <Bg src={Images.SpaceFlightBg} />
+      <Bg src={Images.SpaceFlightBg} alt="" />
       <Line1 />
       <ContentGrid>
         <TypeBlock>

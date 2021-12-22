@@ -189,7 +189,7 @@ export const Mission = ({ copyNodes }: MissionProps) => {
           </TypeBlock>
           <SideBlock>
             <ImageInset>
-              <JezeroImage src={Images.JezeroCrater} />
+              <JezeroImage src={Images.JezeroCrater} alt="Jezero Crater" />
               <RedBar />
               <Info>{`// Angle on Jezero Crater`}</Info>
             </ImageInset>

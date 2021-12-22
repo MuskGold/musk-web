@@ -115,9 +115,9 @@ export const Splash = () => {
   const isSSR = typeof window === 'undefined';
   return (
     <Container>
-      <Bg src={Images.SplashBg} />
-      <LeftPlanet src={Images.SplashLeftPlanet} />
-      <RocketImage src={Images.SplashRocket} />
+      <Bg src={Images.SplashBg} alt="" />
+      <LeftPlanet src={Images.SplashLeftPlanet} alt="" />
+      <RocketImage src={Images.SplashRocket} alt="" />
       {!isSSR && (
         <RocketStage>
           <Suspense fallback={null}>

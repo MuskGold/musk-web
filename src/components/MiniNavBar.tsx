@@ -37,7 +37,7 @@ export const MiniNavBar = () => (
   <Grid>
     <Content>
       <LogoLink to="/">
-        <LogoImage src={Images.MuskNavIcon} />
+        <LogoImage src={Images.MuskNavIcon} alt="" />
       </LogoLink>
     </Content>
   </Grid>

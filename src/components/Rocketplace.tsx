@@ -423,7 +423,7 @@ export const Rocketplace = () => {
               {isLeft && (
                 <ActiveContent>
                   <ActiveContentLeft>
-                    <LeftImage src={Images.RocketPlaceTesla} />
+                    <LeftImage src={Images.RocketPlaceTesla} alt="" />
                   </ActiveContentLeft>
                   <ActiveContentRight>
                     <LeftTypeItem>Tesla Auction - coming soon</LeftTypeItem>
@@ -434,7 +434,7 @@ export const Rocketplace = () => {
               {isRight && (
                 <ActiveContent>
                   <ActiveContentLeft>
-                    <RightImage src={Images.RocketPlaceSun} />
+                    <RightImage src={Images.RocketPlaceSun} alt="" />
                   </ActiveContentLeft>
                   <ActiveContentRight>
                     <RightTypeItem>
@@ -491,7 +491,7 @@ export const Rocketplace = () => {
             <InlineContainer>
               <InlineContent>
                 <InlineContentLeft>
-                  <InlineLeftImage src={Images.RocketPlaceTesla} />
+                  <InlineLeftImage src={Images.RocketPlaceTesla} alt="" />
                 </InlineContentLeft>
                 <InlineContentRight>
                   <InlineLeftTypeItem>
@@ -502,7 +502,7 @@ export const Rocketplace = () => {
               </InlineContent>
               <InlineContent>
                 <InlineContentLeft>
-                  <InlineRightImage src={Images.RocketPlaceSun} />
+                  <InlineRightImage src={Images.RocketPlaceSun} alt="" />
                 </InlineContentLeft>
                 <InlineContentRight>
                   <InlineRightTypeItem>
@@ -519,7 +519,7 @@ export const Rocketplace = () => {
         <NavGrid>
           <LeftNav>
             <LeftNavBox onClick={toggleLeft}>
-              <LeftNavImage src={Images.RocketPlaceTesla} />
+              <LeftNavImage src={Images.RocketPlaceTesla} alt="" />
               <LeftNavCaption>
                 Click here to enter
                 <br />
@@ -529,7 +529,7 @@ export const Rocketplace = () => {
           </LeftNav>
           <RightNav>
             <RightNavBox onClick={toggleRight}>
-              <RightNavImage src={Images.RocketPlaceSun} />
+              <RightNavImage src={Images.RocketPlaceSun} alt="" />
               <RightNavCaption>
                 Space-X
                 <br />
