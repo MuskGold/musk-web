@@ -308,7 +308,9 @@ export const LaunchPrep = () => (
             </AltItem>
             <AltItem>
               Go to{' '}
-              <AltLink href="https://app.uniswap.org/">app.uniswap.org</AltLink>{' '}
+              <AltLink href="https://app.uniswap.org/#/swap?outputCurrency=0x6069c9223e8a5da1ec49ac5525d4bb757af72cd8">
+                app.uniswap.org
+              </AltLink>{' '}
               and prepare to swap
             </AltItem>
             <AltItem>Connect your MetaMask Wallet to Uniswap</AltItem>
