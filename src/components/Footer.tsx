@@ -198,8 +198,8 @@ export const Footer = ({ setIsScroll }: FooterProps) => {
             <ExtraLink href="https://github.com/MuskGold/musk-whitepaper">
               Whitepaper
             </ExtraLink>
-            <ExtraLink href="/privacy">Privacy</ExtraLink>
-            <InternalLink to="/terms">Terms of use</InternalLink>
+            <InternalLink to="/privacy/">Privacy</InternalLink>
+            <InternalLink to="/terms/">Terms of use</InternalLink>
             <ExtraLink href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%69%6E%66%6F%40%6D%75%73%6B%2E%67%6F%6C%64">
               Contact Us
             </ExtraLink>
