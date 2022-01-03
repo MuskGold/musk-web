@@ -41,7 +41,7 @@ const TypeBlock = styled.div`
   grid-column: 2 / span 4;
 `;
 
-const TypeItem = styled.p`
+const TypeHtml = styled.div`
   font-family: 'Lato';
   color: #333333;
   line-height: 40px;
@@ -67,7 +67,7 @@ export default ({ data }: QueryProps) => {
                 <br />
                 Terms
               </Title>
-              <TypeItem dangerouslySetInnerHTML={{ __html: html }} />
+              <TypeHtml dangerouslySetInnerHTML={{ __html: html }} />
             </TypeBlock>
           </ContentGrid>
         </Content>

@@ -93,6 +93,15 @@ const TypeItem = styled.p`
   }
 `;
 
+const TypeHtml = styled.div`
+  font-family: 'Lato';
+  color: #cccccc;
+  line-height: 32px;
+  span {
+    color: #ffffff;
+  }
+`;
+
 const Content = styled.div`
   @media (min-width: 768px) {
     padding-right: 20%;
@@ -137,7 +146,7 @@ export const Spaceflight = ({ copyNodes }: SpaceflightProps) => {
           <MainContent>
             <Title>Spaceflight</Title>
             <Content>
-              <TypeItem dangerouslySetInnerHTML={{ __html: html }} />
+              <TypeHtml dangerouslySetInnerHTML={{ __html: html }} />
             </Content>
           </MainContent>
         </TypeBlock>

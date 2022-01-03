@@ -140,7 +140,7 @@ const JezeroImage = styled.img`
   overflow: hidden;
 `;
 
-const TypeItem = styled.p`
+const TypeHtml = styled.div`
   font-family: 'Lato';
   color: #888;
   font-size: 16px;
@@ -185,7 +185,7 @@ export const Mission = ({ copyNodes }: MissionProps) => {
               Mission
             </Title>
             <Hr />
-            <TypeItem dangerouslySetInnerHTML={{ __html: html }} />
+            <TypeHtml dangerouslySetInnerHTML={{ __html: html }} />
           </TypeBlock>
           <SideBlock>
             <ImageInset>
