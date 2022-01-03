@@ -1,4 +1,6 @@
 ---
 title: Spaceflight
 ---
-Don’t be fooled by the recent Metaverse trend, the Universe is the true Final Frontier.  With the launch of **$MUSK Gold** we will redefine the gold standard for space currencies of the future. Help encourage **$MUSK Gold** adoption by tweeting our website, white paper or explainer video links with “$MUSK #MuskGold”, as well as your ETH wallet address and we will thank our community with SpaceFlight reward rockets of their own. Together we will shoot past the Moon, straight to Mars!
+**$MUSK Gold** is a decentralized, peer-to-peer digital currency that enables you to easily send and receive money anywhere throughout our solar system, dubbed the "Gold of the Galaxy". **$MUSK Gold** also functions as a token rewards based system for everyday utilities in sectors such as sustainable energy, electric vehicles and advanced communication.
+
+Taking a cue from Elon Musk naming his car brand after his idol Nikola Tesla, **$MUSK Gold** is an homage to arguably this generation’s greatest pioneer. His spirit of exploration, technological innovation and cleaner energy advocation inspires us all to push the boundaries of progress, and what it means to be human in the process. **$MUSK Gold** honors this trailblazing spirit with every transaction, furthering our mission for a cleaner environment and more inclusive existence for humanity.
