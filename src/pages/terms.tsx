@@ -48,6 +48,9 @@ const TypeHtml = styled.div`
   span {
     color: #000000;
   }
+  a {
+    color: #000000;
+  }
 `;
 
 export default ({ data }: QueryProps) => {
@@ -62,11 +65,7 @@ export default ({ data }: QueryProps) => {
         <Content>
           <ContentGrid>
             <TypeBlock>
-              <Title>
-                The
-                <br />
-                Terms
-              </Title>
+              <Title>Terms and Risk Disclosure</Title>
               <TypeHtml dangerouslySetInnerHTML={{ __html: html }} />
             </TypeBlock>
           </ContentGrid>
