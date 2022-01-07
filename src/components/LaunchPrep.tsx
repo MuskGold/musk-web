@@ -281,7 +281,7 @@ export const LaunchPrep = () => (
       <MainCol>
         <LaunchImage>
           <StyledIframe
-            src="https://www.youtube.com/embed/8RB0cFVMoWY?enablejsapi=1&origin=https://www.musk.gold/"
+            src="https://www.youtube.com/embed/8fXRKCwBBG8?enablejsapi=1&origin=https://www.musk.gold/"
             title="Prepare to Launch"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             frameBorder="0"
@@ -293,8 +293,8 @@ export const LaunchPrep = () => (
         <TypeBlock>
           <MainBar />
           <TypeItem>
-            <TypeItemInfo>What is $MUSK Gold?</TypeItemInfo> Watch this
-            explainer video
+            <TypeItemInfo>How To Acquire $Musk Gold on Uniswap</TypeItemInfo>{' '}
+            Complete Guide
           </TypeItem>
         </TypeBlock>
       </MainCol>

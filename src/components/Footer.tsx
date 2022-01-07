@@ -198,6 +198,9 @@ export const Footer = ({ setIsScroll }: FooterProps) => {
             <ExtraLink href="https://github.com/MuskGold/musk-whitepaper">
               Whitepaper
             </ExtraLink>
+            <ExtraLink href="https://www.coingecko.com/en/coins/musk-gold">
+              CoinGecko
+            </ExtraLink>
             <InternalLink to="/privacy/">Privacy Policy</InternalLink>
             <InternalLink to="/terms/">
               Terms &amp; Risk Disclosure
