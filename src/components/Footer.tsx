@@ -211,7 +211,7 @@ export const Footer = ({ setIsScroll }: FooterProps) => {
           </LinkSet>
         </Grid>
         <CopyRight>
-          &copy; 2021 Intergalactic Decentralized Gold Autonomous Financials,
+          &copy; 2022 Intergalactic Decentralized Gold Autonomous Financials,
           Inc.
         </CopyRight>
       </Content>
