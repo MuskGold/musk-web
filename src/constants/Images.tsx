@@ -1,3 +1,4 @@
+import AstronautsBg from '../assets/images/astronauts-bg.jpg';
 import FlightPathSide from '../assets/images/flight-path-side.jpg';
 import JezeroCrater from '../assets/images/jezero-crater.jpg';
 import LaunchPrepGlass from '../assets/images/launch-prep-glass.jpg';
@@ -24,6 +25,7 @@ import WhitePaperBgPosterMob from '../assets/images/white-paper-bg-poster-mob.jp
 import WhitePaperBgPoster from '../assets/images/white-paper-bg-poster.jpg';
 
 export const Images = {
+  AstronautsBg,
   FlightPathSide,
   JezeroCrater,
   LaunchPrepGlass,

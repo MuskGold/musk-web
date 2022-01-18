@@ -1,12 +1,8 @@
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
-export type Exact<T extends { [key: string]: unknown }> = {
-  [K in keyof T]: T[K];
-};
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> &
-  { [SubKey in K]?: Maybe<T[SubKey]> };
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> &
-  { [SubKey in K]: Maybe<T[SubKey]> };
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -24,6 +20,508 @@ export type AvifOptions = {
   lossless?: InputMaybe<Scalars['Boolean']>;
   quality?: InputMaybe<Scalars['Int']>;
   speed?: InputMaybe<Scalars['Int']>;
+};
+
+export type AstronautsJson = Node & {
+  __typename?: 'AstronautsJson';
+  children: Array<Node>;
+  desc?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  image?: Maybe<File>;
+  internal: Internal;
+  name?: Maybe<Scalars['String']>;
+  parent?: Maybe<Node>;
+  url?: Maybe<Scalars['String']>;
+};
+
+export type AstronautsJsonConnection = {
+  __typename?: 'AstronautsJsonConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<AstronautsJsonEdge>;
+  group: Array<AstronautsJsonGroupConnection>;
+  nodes: Array<AstronautsJson>;
+  pageInfo: PageInfo;
+  totalCount: Scalars['Int'];
+};
+
+
+export type AstronautsJsonConnectionDistinctArgs = {
+  field: AstronautsJsonFieldsEnum;
+};
+
+
+export type AstronautsJsonConnectionGroupArgs = {
+  field: AstronautsJsonFieldsEnum;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+export type AstronautsJsonEdge = {
+  __typename?: 'AstronautsJsonEdge';
+  next?: Maybe<AstronautsJson>;
+  node: AstronautsJson;
+  previous?: Maybe<AstronautsJson>;
+};
+
+export enum AstronautsJsonFieldsEnum {
+  Children = 'children',
+  ChildrenChildren = 'children___children',
+  ChildrenChildrenChildren = 'children___children___children',
+  ChildrenChildrenChildrenChildren = 'children___children___children___children',
+  ChildrenChildrenChildrenId = 'children___children___children___id',
+  ChildrenChildrenId = 'children___children___id',
+  ChildrenChildrenInternalContent = 'children___children___internal___content',
+  ChildrenChildrenInternalContentDigest = 'children___children___internal___contentDigest',
+  ChildrenChildrenInternalDescription = 'children___children___internal___description',
+  ChildrenChildrenInternalFieldOwners = 'children___children___internal___fieldOwners',
+  ChildrenChildrenInternalIgnoreType = 'children___children___internal___ignoreType',
+  ChildrenChildrenInternalMediaType = 'children___children___internal___mediaType',
+  ChildrenChildrenInternalOwner = 'children___children___internal___owner',
+  ChildrenChildrenInternalType = 'children___children___internal___type',
+  ChildrenChildrenParentChildren = 'children___children___parent___children',
+  ChildrenChildrenParentId = 'children___children___parent___id',
+  ChildrenId = 'children___id',
+  ChildrenInternalContent = 'children___internal___content',
+  ChildrenInternalContentDigest = 'children___internal___contentDigest',
+  ChildrenInternalDescription = 'children___internal___description',
+  ChildrenInternalFieldOwners = 'children___internal___fieldOwners',
+  ChildrenInternalIgnoreType = 'children___internal___ignoreType',
+  ChildrenInternalMediaType = 'children___internal___mediaType',
+  ChildrenInternalOwner = 'children___internal___owner',
+  ChildrenInternalType = 'children___internal___type',
+  ChildrenParentChildren = 'children___parent___children',
+  ChildrenParentChildrenChildren = 'children___parent___children___children',
+  ChildrenParentChildrenId = 'children___parent___children___id',
+  ChildrenParentId = 'children___parent___id',
+  ChildrenParentInternalContent = 'children___parent___internal___content',
+  ChildrenParentInternalContentDigest = 'children___parent___internal___contentDigest',
+  ChildrenParentInternalDescription = 'children___parent___internal___description',
+  ChildrenParentInternalFieldOwners = 'children___parent___internal___fieldOwners',
+  ChildrenParentInternalIgnoreType = 'children___parent___internal___ignoreType',
+  ChildrenParentInternalMediaType = 'children___parent___internal___mediaType',
+  ChildrenParentInternalOwner = 'children___parent___internal___owner',
+  ChildrenParentInternalType = 'children___parent___internal___type',
+  ChildrenParentParentChildren = 'children___parent___parent___children',
+  ChildrenParentParentId = 'children___parent___parent___id',
+  Desc = 'desc',
+  Id = 'id',
+  ImageAbsolutePath = 'image___absolutePath',
+  ImageAccessTime = 'image___accessTime',
+  ImageAtime = 'image___atime',
+  ImageAtimeMs = 'image___atimeMs',
+  ImageBase = 'image___base',
+  ImageBirthTime = 'image___birthTime',
+  ImageBirthtime = 'image___birthtime',
+  ImageBirthtimeMs = 'image___birthtimeMs',
+  ImageBlksize = 'image___blksize',
+  ImageBlocks = 'image___blocks',
+  ImageChangeTime = 'image___changeTime',
+  ImageChildAstronautsJsonChildren = 'image___childAstronautsJson___children',
+  ImageChildAstronautsJsonChildrenChildren = 'image___childAstronautsJson___children___children',
+  ImageChildAstronautsJsonChildrenId = 'image___childAstronautsJson___children___id',
+  ImageChildAstronautsJsonDesc = 'image___childAstronautsJson___desc',
+  ImageChildAstronautsJsonId = 'image___childAstronautsJson___id',
+  ImageChildAstronautsJsonImageAbsolutePath = 'image___childAstronautsJson___image___absolutePath',
+  ImageChildAstronautsJsonImageAccessTime = 'image___childAstronautsJson___image___accessTime',
+  ImageChildAstronautsJsonImageAtime = 'image___childAstronautsJson___image___atime',
+  ImageChildAstronautsJsonImageAtimeMs = 'image___childAstronautsJson___image___atimeMs',
+  ImageChildAstronautsJsonImageBase = 'image___childAstronautsJson___image___base',
+  ImageChildAstronautsJsonImageBirthTime = 'image___childAstronautsJson___image___birthTime',
+  ImageChildAstronautsJsonImageBirthtime = 'image___childAstronautsJson___image___birthtime',
+  ImageChildAstronautsJsonImageBirthtimeMs = 'image___childAstronautsJson___image___birthtimeMs',
+  ImageChildAstronautsJsonImageBlksize = 'image___childAstronautsJson___image___blksize',
+  ImageChildAstronautsJsonImageBlocks = 'image___childAstronautsJson___image___blocks',
+  ImageChildAstronautsJsonImageChangeTime = 'image___childAstronautsJson___image___changeTime',
+  ImageChildAstronautsJsonImageChildren = 'image___childAstronautsJson___image___children',
+  ImageChildAstronautsJsonImageChildrenAstronautsJson = 'image___childAstronautsJson___image___childrenAstronautsJson',
+  ImageChildAstronautsJsonImageChildrenImageSharp = 'image___childAstronautsJson___image___childrenImageSharp',
+  ImageChildAstronautsJsonImageChildrenMarkdownRemark = 'image___childAstronautsJson___image___childrenMarkdownRemark',
+  ImageChildAstronautsJsonImageCtime = 'image___childAstronautsJson___image___ctime',
+  ImageChildAstronautsJsonImageCtimeMs = 'image___childAstronautsJson___image___ctimeMs',
+  ImageChildAstronautsJsonImageDev = 'image___childAstronautsJson___image___dev',
+  ImageChildAstronautsJsonImageDir = 'image___childAstronautsJson___image___dir',
+  ImageChildAstronautsJsonImageExt = 'image___childAstronautsJson___image___ext',
+  ImageChildAstronautsJsonImageExtension = 'image___childAstronautsJson___image___extension',
+  ImageChildAstronautsJsonImageGid = 'image___childAstronautsJson___image___gid',
+  ImageChildAstronautsJsonImageId = 'image___childAstronautsJson___image___id',
+  ImageChildAstronautsJsonImageIno = 'image___childAstronautsJson___image___ino',
+  ImageChildAstronautsJsonImageMode = 'image___childAstronautsJson___image___mode',
+  ImageChildAstronautsJsonImageModifiedTime = 'image___childAstronautsJson___image___modifiedTime',
+  ImageChildAstronautsJsonImageMtime = 'image___childAstronautsJson___image___mtime',
+  ImageChildAstronautsJsonImageMtimeMs = 'image___childAstronautsJson___image___mtimeMs',
+  ImageChildAstronautsJsonImageName = 'image___childAstronautsJson___image___name',
+  ImageChildAstronautsJsonImageNlink = 'image___childAstronautsJson___image___nlink',
+  ImageChildAstronautsJsonImagePrettySize = 'image___childAstronautsJson___image___prettySize',
+  ImageChildAstronautsJsonImagePublicUrl = 'image___childAstronautsJson___image___publicURL',
+  ImageChildAstronautsJsonImageRdev = 'image___childAstronautsJson___image___rdev',
+  ImageChildAstronautsJsonImageRelativeDirectory = 'image___childAstronautsJson___image___relativeDirectory',
+  ImageChildAstronautsJsonImageRelativePath = 'image___childAstronautsJson___image___relativePath',
+  ImageChildAstronautsJsonImageRoot = 'image___childAstronautsJson___image___root',
+  ImageChildAstronautsJsonImageSize = 'image___childAstronautsJson___image___size',
+  ImageChildAstronautsJsonImageSourceInstanceName = 'image___childAstronautsJson___image___sourceInstanceName',
+  ImageChildAstronautsJsonImageUid = 'image___childAstronautsJson___image___uid',
+  ImageChildAstronautsJsonInternalContent = 'image___childAstronautsJson___internal___content',
+  ImageChildAstronautsJsonInternalContentDigest = 'image___childAstronautsJson___internal___contentDigest',
+  ImageChildAstronautsJsonInternalDescription = 'image___childAstronautsJson___internal___description',
+  ImageChildAstronautsJsonInternalFieldOwners = 'image___childAstronautsJson___internal___fieldOwners',
+  ImageChildAstronautsJsonInternalIgnoreType = 'image___childAstronautsJson___internal___ignoreType',
+  ImageChildAstronautsJsonInternalMediaType = 'image___childAstronautsJson___internal___mediaType',
+  ImageChildAstronautsJsonInternalOwner = 'image___childAstronautsJson___internal___owner',
+  ImageChildAstronautsJsonInternalType = 'image___childAstronautsJson___internal___type',
+  ImageChildAstronautsJsonName = 'image___childAstronautsJson___name',
+  ImageChildAstronautsJsonParentChildren = 'image___childAstronautsJson___parent___children',
+  ImageChildAstronautsJsonParentId = 'image___childAstronautsJson___parent___id',
+  ImageChildAstronautsJsonUrl = 'image___childAstronautsJson___url',
+  ImageChildImageSharpChildren = 'image___childImageSharp___children',
+  ImageChildImageSharpChildrenChildren = 'image___childImageSharp___children___children',
+  ImageChildImageSharpChildrenId = 'image___childImageSharp___children___id',
+  ImageChildImageSharpFixedAspectRatio = 'image___childImageSharp___fixed___aspectRatio',
+  ImageChildImageSharpFixedBase64 = 'image___childImageSharp___fixed___base64',
+  ImageChildImageSharpFixedHeight = 'image___childImageSharp___fixed___height',
+  ImageChildImageSharpFixedOriginalName = 'image___childImageSharp___fixed___originalName',
+  ImageChildImageSharpFixedSrc = 'image___childImageSharp___fixed___src',
+  ImageChildImageSharpFixedSrcSet = 'image___childImageSharp___fixed___srcSet',
+  ImageChildImageSharpFixedSrcSetWebp = 'image___childImageSharp___fixed___srcSetWebp',
+  ImageChildImageSharpFixedSrcWebp = 'image___childImageSharp___fixed___srcWebp',
+  ImageChildImageSharpFixedTracedSvg = 'image___childImageSharp___fixed___tracedSVG',
+  ImageChildImageSharpFixedWidth = 'image___childImageSharp___fixed___width',
+  ImageChildImageSharpFluidAspectRatio = 'image___childImageSharp___fluid___aspectRatio',
+  ImageChildImageSharpFluidBase64 = 'image___childImageSharp___fluid___base64',
+  ImageChildImageSharpFluidOriginalImg = 'image___childImageSharp___fluid___originalImg',
+  ImageChildImageSharpFluidOriginalName = 'image___childImageSharp___fluid___originalName',
+  ImageChildImageSharpFluidPresentationHeight = 'image___childImageSharp___fluid___presentationHeight',
+  ImageChildImageSharpFluidPresentationWidth = 'image___childImageSharp___fluid___presentationWidth',
+  ImageChildImageSharpFluidSizes = 'image___childImageSharp___fluid___sizes',
+  ImageChildImageSharpFluidSrc = 'image___childImageSharp___fluid___src',
+  ImageChildImageSharpFluidSrcSet = 'image___childImageSharp___fluid___srcSet',
+  ImageChildImageSharpFluidSrcSetWebp = 'image___childImageSharp___fluid___srcSetWebp',
+  ImageChildImageSharpFluidSrcWebp = 'image___childImageSharp___fluid___srcWebp',
+  ImageChildImageSharpFluidTracedSvg = 'image___childImageSharp___fluid___tracedSVG',
+  ImageChildImageSharpGatsbyImageData = 'image___childImageSharp___gatsbyImageData',
+  ImageChildImageSharpId = 'image___childImageSharp___id',
+  ImageChildImageSharpInternalContent = 'image___childImageSharp___internal___content',
+  ImageChildImageSharpInternalContentDigest = 'image___childImageSharp___internal___contentDigest',
+  ImageChildImageSharpInternalDescription = 'image___childImageSharp___internal___description',
+  ImageChildImageSharpInternalFieldOwners = 'image___childImageSharp___internal___fieldOwners',
+  ImageChildImageSharpInternalIgnoreType = 'image___childImageSharp___internal___ignoreType',
+  ImageChildImageSharpInternalMediaType = 'image___childImageSharp___internal___mediaType',
+  ImageChildImageSharpInternalOwner = 'image___childImageSharp___internal___owner',
+  ImageChildImageSharpInternalType = 'image___childImageSharp___internal___type',
+  ImageChildImageSharpOriginalHeight = 'image___childImageSharp___original___height',
+  ImageChildImageSharpOriginalSrc = 'image___childImageSharp___original___src',
+  ImageChildImageSharpOriginalWidth = 'image___childImageSharp___original___width',
+  ImageChildImageSharpParentChildren = 'image___childImageSharp___parent___children',
+  ImageChildImageSharpParentId = 'image___childImageSharp___parent___id',
+  ImageChildImageSharpResizeAspectRatio = 'image___childImageSharp___resize___aspectRatio',
+  ImageChildImageSharpResizeHeight = 'image___childImageSharp___resize___height',
+  ImageChildImageSharpResizeOriginalName = 'image___childImageSharp___resize___originalName',
+  ImageChildImageSharpResizeSrc = 'image___childImageSharp___resize___src',
+  ImageChildImageSharpResizeTracedSvg = 'image___childImageSharp___resize___tracedSVG',
+  ImageChildImageSharpResizeWidth = 'image___childImageSharp___resize___width',
+  ImageChildMarkdownRemarkChildren = 'image___childMarkdownRemark___children',
+  ImageChildMarkdownRemarkChildrenChildren = 'image___childMarkdownRemark___children___children',
+  ImageChildMarkdownRemarkChildrenId = 'image___childMarkdownRemark___children___id',
+  ImageChildMarkdownRemarkExcerpt = 'image___childMarkdownRemark___excerpt',
+  ImageChildMarkdownRemarkExcerptAst = 'image___childMarkdownRemark___excerptAst',
+  ImageChildMarkdownRemarkFileAbsolutePath = 'image___childMarkdownRemark___fileAbsolutePath',
+  ImageChildMarkdownRemarkFrontmatterTitle = 'image___childMarkdownRemark___frontmatter___title',
+  ImageChildMarkdownRemarkHeadings = 'image___childMarkdownRemark___headings',
+  ImageChildMarkdownRemarkHeadingsDepth = 'image___childMarkdownRemark___headings___depth',
+  ImageChildMarkdownRemarkHeadingsId = 'image___childMarkdownRemark___headings___id',
+  ImageChildMarkdownRemarkHeadingsValue = 'image___childMarkdownRemark___headings___value',
+  ImageChildMarkdownRemarkHtml = 'image___childMarkdownRemark___html',
+  ImageChildMarkdownRemarkHtmlAst = 'image___childMarkdownRemark___htmlAst',
+  ImageChildMarkdownRemarkId = 'image___childMarkdownRemark___id',
+  ImageChildMarkdownRemarkInternalContent = 'image___childMarkdownRemark___internal___content',
+  ImageChildMarkdownRemarkInternalContentDigest = 'image___childMarkdownRemark___internal___contentDigest',
+  ImageChildMarkdownRemarkInternalDescription = 'image___childMarkdownRemark___internal___description',
+  ImageChildMarkdownRemarkInternalFieldOwners = 'image___childMarkdownRemark___internal___fieldOwners',
+  ImageChildMarkdownRemarkInternalIgnoreType = 'image___childMarkdownRemark___internal___ignoreType',
+  ImageChildMarkdownRemarkInternalMediaType = 'image___childMarkdownRemark___internal___mediaType',
+  ImageChildMarkdownRemarkInternalOwner = 'image___childMarkdownRemark___internal___owner',
+  ImageChildMarkdownRemarkInternalType = 'image___childMarkdownRemark___internal___type',
+  ImageChildMarkdownRemarkParentChildren = 'image___childMarkdownRemark___parent___children',
+  ImageChildMarkdownRemarkParentId = 'image___childMarkdownRemark___parent___id',
+  ImageChildMarkdownRemarkRawMarkdownBody = 'image___childMarkdownRemark___rawMarkdownBody',
+  ImageChildMarkdownRemarkTableOfContents = 'image___childMarkdownRemark___tableOfContents',
+  ImageChildMarkdownRemarkTimeToRead = 'image___childMarkdownRemark___timeToRead',
+  ImageChildMarkdownRemarkWordCountParagraphs = 'image___childMarkdownRemark___wordCount___paragraphs',
+  ImageChildMarkdownRemarkWordCountSentences = 'image___childMarkdownRemark___wordCount___sentences',
+  ImageChildMarkdownRemarkWordCountWords = 'image___childMarkdownRemark___wordCount___words',
+  ImageChildren = 'image___children',
+  ImageChildrenAstronautsJson = 'image___childrenAstronautsJson',
+  ImageChildrenAstronautsJsonChildren = 'image___childrenAstronautsJson___children',
+  ImageChildrenAstronautsJsonChildrenChildren = 'image___childrenAstronautsJson___children___children',
+  ImageChildrenAstronautsJsonChildrenId = 'image___childrenAstronautsJson___children___id',
+  ImageChildrenAstronautsJsonDesc = 'image___childrenAstronautsJson___desc',
+  ImageChildrenAstronautsJsonId = 'image___childrenAstronautsJson___id',
+  ImageChildrenAstronautsJsonImageAbsolutePath = 'image___childrenAstronautsJson___image___absolutePath',
+  ImageChildrenAstronautsJsonImageAccessTime = 'image___childrenAstronautsJson___image___accessTime',
+  ImageChildrenAstronautsJsonImageAtime = 'image___childrenAstronautsJson___image___atime',
+  ImageChildrenAstronautsJsonImageAtimeMs = 'image___childrenAstronautsJson___image___atimeMs',
+  ImageChildrenAstronautsJsonImageBase = 'image___childrenAstronautsJson___image___base',
+  ImageChildrenAstronautsJsonImageBirthTime = 'image___childrenAstronautsJson___image___birthTime',
+  ImageChildrenAstronautsJsonImageBirthtime = 'image___childrenAstronautsJson___image___birthtime',
+  ImageChildrenAstronautsJsonImageBirthtimeMs = 'image___childrenAstronautsJson___image___birthtimeMs',
+  ImageChildrenAstronautsJsonImageBlksize = 'image___childrenAstronautsJson___image___blksize',
+  ImageChildrenAstronautsJsonImageBlocks = 'image___childrenAstronautsJson___image___blocks',
+  ImageChildrenAstronautsJsonImageChangeTime = 'image___childrenAstronautsJson___image___changeTime',
+  ImageChildrenAstronautsJsonImageChildren = 'image___childrenAstronautsJson___image___children',
+  ImageChildrenAstronautsJsonImageChildrenAstronautsJson = 'image___childrenAstronautsJson___image___childrenAstronautsJson',
+  ImageChildrenAstronautsJsonImageChildrenImageSharp = 'image___childrenAstronautsJson___image___childrenImageSharp',
+  ImageChildrenAstronautsJsonImageChildrenMarkdownRemark = 'image___childrenAstronautsJson___image___childrenMarkdownRemark',
+  ImageChildrenAstronautsJsonImageCtime = 'image___childrenAstronautsJson___image___ctime',
+  ImageChildrenAstronautsJsonImageCtimeMs = 'image___childrenAstronautsJson___image___ctimeMs',
+  ImageChildrenAstronautsJsonImageDev = 'image___childrenAstronautsJson___image___dev',
+  ImageChildrenAstronautsJsonImageDir = 'image___childrenAstronautsJson___image___dir',
+  ImageChildrenAstronautsJsonImageExt = 'image___childrenAstronautsJson___image___ext',
+  ImageChildrenAstronautsJsonImageExtension = 'image___childrenAstronautsJson___image___extension',
+  ImageChildrenAstronautsJsonImageGid = 'image___childrenAstronautsJson___image___gid',
+  ImageChildrenAstronautsJsonImageId = 'image___childrenAstronautsJson___image___id',
+  ImageChildrenAstronautsJsonImageIno = 'image___childrenAstronautsJson___image___ino',
+  ImageChildrenAstronautsJsonImageMode = 'image___childrenAstronautsJson___image___mode',
+  ImageChildrenAstronautsJsonImageModifiedTime = 'image___childrenAstronautsJson___image___modifiedTime',
+  ImageChildrenAstronautsJsonImageMtime = 'image___childrenAstronautsJson___image___mtime',
+  ImageChildrenAstronautsJsonImageMtimeMs = 'image___childrenAstronautsJson___image___mtimeMs',
+  ImageChildrenAstronautsJsonImageName = 'image___childrenAstronautsJson___image___name',
+  ImageChildrenAstronautsJsonImageNlink = 'image___childrenAstronautsJson___image___nlink',
+  ImageChildrenAstronautsJsonImagePrettySize = 'image___childrenAstronautsJson___image___prettySize',
+  ImageChildrenAstronautsJsonImagePublicUrl = 'image___childrenAstronautsJson___image___publicURL',
+  ImageChildrenAstronautsJsonImageRdev = 'image___childrenAstronautsJson___image___rdev',
+  ImageChildrenAstronautsJsonImageRelativeDirectory = 'image___childrenAstronautsJson___image___relativeDirectory',
+  ImageChildrenAstronautsJsonImageRelativePath = 'image___childrenAstronautsJson___image___relativePath',
+  ImageChildrenAstronautsJsonImageRoot = 'image___childrenAstronautsJson___image___root',
+  ImageChildrenAstronautsJsonImageSize = 'image___childrenAstronautsJson___image___size',
+  ImageChildrenAstronautsJsonImageSourceInstanceName = 'image___childrenAstronautsJson___image___sourceInstanceName',
+  ImageChildrenAstronautsJsonImageUid = 'image___childrenAstronautsJson___image___uid',
+  ImageChildrenAstronautsJsonInternalContent = 'image___childrenAstronautsJson___internal___content',
+  ImageChildrenAstronautsJsonInternalContentDigest = 'image___childrenAstronautsJson___internal___contentDigest',
+  ImageChildrenAstronautsJsonInternalDescription = 'image___childrenAstronautsJson___internal___description',
+  ImageChildrenAstronautsJsonInternalFieldOwners = 'image___childrenAstronautsJson___internal___fieldOwners',
+  ImageChildrenAstronautsJsonInternalIgnoreType = 'image___childrenAstronautsJson___internal___ignoreType',
+  ImageChildrenAstronautsJsonInternalMediaType = 'image___childrenAstronautsJson___internal___mediaType',
+  ImageChildrenAstronautsJsonInternalOwner = 'image___childrenAstronautsJson___internal___owner',
+  ImageChildrenAstronautsJsonInternalType = 'image___childrenAstronautsJson___internal___type',
+  ImageChildrenAstronautsJsonName = 'image___childrenAstronautsJson___name',
+  ImageChildrenAstronautsJsonParentChildren = 'image___childrenAstronautsJson___parent___children',
+  ImageChildrenAstronautsJsonParentId = 'image___childrenAstronautsJson___parent___id',
+  ImageChildrenAstronautsJsonUrl = 'image___childrenAstronautsJson___url',
+  ImageChildrenImageSharp = 'image___childrenImageSharp',
+  ImageChildrenImageSharpChildren = 'image___childrenImageSharp___children',
+  ImageChildrenImageSharpChildrenChildren = 'image___childrenImageSharp___children___children',
+  ImageChildrenImageSharpChildrenId = 'image___childrenImageSharp___children___id',
+  ImageChildrenImageSharpFixedAspectRatio = 'image___childrenImageSharp___fixed___aspectRatio',
+  ImageChildrenImageSharpFixedBase64 = 'image___childrenImageSharp___fixed___base64',
+  ImageChildrenImageSharpFixedHeight = 'image___childrenImageSharp___fixed___height',
+  ImageChildrenImageSharpFixedOriginalName = 'image___childrenImageSharp___fixed___originalName',
+  ImageChildrenImageSharpFixedSrc = 'image___childrenImageSharp___fixed___src',
+  ImageChildrenImageSharpFixedSrcSet = 'image___childrenImageSharp___fixed___srcSet',
+  ImageChildrenImageSharpFixedSrcSetWebp = 'image___childrenImageSharp___fixed___srcSetWebp',
+  ImageChildrenImageSharpFixedSrcWebp = 'image___childrenImageSharp___fixed___srcWebp',
+  ImageChildrenImageSharpFixedTracedSvg = 'image___childrenImageSharp___fixed___tracedSVG',
+  ImageChildrenImageSharpFixedWidth = 'image___childrenImageSharp___fixed___width',
+  ImageChildrenImageSharpFluidAspectRatio = 'image___childrenImageSharp___fluid___aspectRatio',
+  ImageChildrenImageSharpFluidBase64 = 'image___childrenImageSharp___fluid___base64',
+  ImageChildrenImageSharpFluidOriginalImg = 'image___childrenImageSharp___fluid___originalImg',
+  ImageChildrenImageSharpFluidOriginalName = 'image___childrenImageSharp___fluid___originalName',
+  ImageChildrenImageSharpFluidPresentationHeight = 'image___childrenImageSharp___fluid___presentationHeight',
+  ImageChildrenImageSharpFluidPresentationWidth = 'image___childrenImageSharp___fluid___presentationWidth',
+  ImageChildrenImageSharpFluidSizes = 'image___childrenImageSharp___fluid___sizes',
+  ImageChildrenImageSharpFluidSrc = 'image___childrenImageSharp___fluid___src',
+  ImageChildrenImageSharpFluidSrcSet = 'image___childrenImageSharp___fluid___srcSet',
+  ImageChildrenImageSharpFluidSrcSetWebp = 'image___childrenImageSharp___fluid___srcSetWebp',
+  ImageChildrenImageSharpFluidSrcWebp = 'image___childrenImageSharp___fluid___srcWebp',
+  ImageChildrenImageSharpFluidTracedSvg = 'image___childrenImageSharp___fluid___tracedSVG',
+  ImageChildrenImageSharpGatsbyImageData = 'image___childrenImageSharp___gatsbyImageData',
+  ImageChildrenImageSharpId = 'image___childrenImageSharp___id',
+  ImageChildrenImageSharpInternalContent = 'image___childrenImageSharp___internal___content',
+  ImageChildrenImageSharpInternalContentDigest = 'image___childrenImageSharp___internal___contentDigest',
+  ImageChildrenImageSharpInternalDescription = 'image___childrenImageSharp___internal___description',
+  ImageChildrenImageSharpInternalFieldOwners = 'image___childrenImageSharp___internal___fieldOwners',
+  ImageChildrenImageSharpInternalIgnoreType = 'image___childrenImageSharp___internal___ignoreType',
+  ImageChildrenImageSharpInternalMediaType = 'image___childrenImageSharp___internal___mediaType',
+  ImageChildrenImageSharpInternalOwner = 'image___childrenImageSharp___internal___owner',
+  ImageChildrenImageSharpInternalType = 'image___childrenImageSharp___internal___type',
+  ImageChildrenImageSharpOriginalHeight = 'image___childrenImageSharp___original___height',
+  ImageChildrenImageSharpOriginalSrc = 'image___childrenImageSharp___original___src',
+  ImageChildrenImageSharpOriginalWidth = 'image___childrenImageSharp___original___width',
+  ImageChildrenImageSharpParentChildren = 'image___childrenImageSharp___parent___children',
+  ImageChildrenImageSharpParentId = 'image___childrenImageSharp___parent___id',
+  ImageChildrenImageSharpResizeAspectRatio = 'image___childrenImageSharp___resize___aspectRatio',
+  ImageChildrenImageSharpResizeHeight = 'image___childrenImageSharp___resize___height',
+  ImageChildrenImageSharpResizeOriginalName = 'image___childrenImageSharp___resize___originalName',
+  ImageChildrenImageSharpResizeSrc = 'image___childrenImageSharp___resize___src',
+  ImageChildrenImageSharpResizeTracedSvg = 'image___childrenImageSharp___resize___tracedSVG',
+  ImageChildrenImageSharpResizeWidth = 'image___childrenImageSharp___resize___width',
+  ImageChildrenMarkdownRemark = 'image___childrenMarkdownRemark',
+  ImageChildrenMarkdownRemarkChildren = 'image___childrenMarkdownRemark___children',
+  ImageChildrenMarkdownRemarkChildrenChildren = 'image___childrenMarkdownRemark___children___children',
+  ImageChildrenMarkdownRemarkChildrenId = 'image___childrenMarkdownRemark___children___id',
+  ImageChildrenMarkdownRemarkExcerpt = 'image___childrenMarkdownRemark___excerpt',
+  ImageChildrenMarkdownRemarkExcerptAst = 'image___childrenMarkdownRemark___excerptAst',
+  ImageChildrenMarkdownRemarkFileAbsolutePath = 'image___childrenMarkdownRemark___fileAbsolutePath',
+  ImageChildrenMarkdownRemarkFrontmatterTitle = 'image___childrenMarkdownRemark___frontmatter___title',
+  ImageChildrenMarkdownRemarkHeadings = 'image___childrenMarkdownRemark___headings',
+  ImageChildrenMarkdownRemarkHeadingsDepth = 'image___childrenMarkdownRemark___headings___depth',
+  ImageChildrenMarkdownRemarkHeadingsId = 'image___childrenMarkdownRemark___headings___id',
+  ImageChildrenMarkdownRemarkHeadingsValue = 'image___childrenMarkdownRemark___headings___value',
+  ImageChildrenMarkdownRemarkHtml = 'image___childrenMarkdownRemark___html',
+  ImageChildrenMarkdownRemarkHtmlAst = 'image___childrenMarkdownRemark___htmlAst',
+  ImageChildrenMarkdownRemarkId = 'image___childrenMarkdownRemark___id',
+  ImageChildrenMarkdownRemarkInternalContent = 'image___childrenMarkdownRemark___internal___content',
+  ImageChildrenMarkdownRemarkInternalContentDigest = 'image___childrenMarkdownRemark___internal___contentDigest',
+  ImageChildrenMarkdownRemarkInternalDescription = 'image___childrenMarkdownRemark___internal___description',
+  ImageChildrenMarkdownRemarkInternalFieldOwners = 'image___childrenMarkdownRemark___internal___fieldOwners',
+  ImageChildrenMarkdownRemarkInternalIgnoreType = 'image___childrenMarkdownRemark___internal___ignoreType',
+  ImageChildrenMarkdownRemarkInternalMediaType = 'image___childrenMarkdownRemark___internal___mediaType',
+  ImageChildrenMarkdownRemarkInternalOwner = 'image___childrenMarkdownRemark___internal___owner',
+  ImageChildrenMarkdownRemarkInternalType = 'image___childrenMarkdownRemark___internal___type',
+  ImageChildrenMarkdownRemarkParentChildren = 'image___childrenMarkdownRemark___parent___children',
+  ImageChildrenMarkdownRemarkParentId = 'image___childrenMarkdownRemark___parent___id',
+  ImageChildrenMarkdownRemarkRawMarkdownBody = 'image___childrenMarkdownRemark___rawMarkdownBody',
+  ImageChildrenMarkdownRemarkTableOfContents = 'image___childrenMarkdownRemark___tableOfContents',
+  ImageChildrenMarkdownRemarkTimeToRead = 'image___childrenMarkdownRemark___timeToRead',
+  ImageChildrenMarkdownRemarkWordCountParagraphs = 'image___childrenMarkdownRemark___wordCount___paragraphs',
+  ImageChildrenMarkdownRemarkWordCountSentences = 'image___childrenMarkdownRemark___wordCount___sentences',
+  ImageChildrenMarkdownRemarkWordCountWords = 'image___childrenMarkdownRemark___wordCount___words',
+  ImageChildrenChildren = 'image___children___children',
+  ImageChildrenChildrenChildren = 'image___children___children___children',
+  ImageChildrenChildrenId = 'image___children___children___id',
+  ImageChildrenId = 'image___children___id',
+  ImageChildrenInternalContent = 'image___children___internal___content',
+  ImageChildrenInternalContentDigest = 'image___children___internal___contentDigest',
+  ImageChildrenInternalDescription = 'image___children___internal___description',
+  ImageChildrenInternalFieldOwners = 'image___children___internal___fieldOwners',
+  ImageChildrenInternalIgnoreType = 'image___children___internal___ignoreType',
+  ImageChildrenInternalMediaType = 'image___children___internal___mediaType',
+  ImageChildrenInternalOwner = 'image___children___internal___owner',
+  ImageChildrenInternalType = 'image___children___internal___type',
+  ImageChildrenParentChildren = 'image___children___parent___children',
+  ImageChildrenParentId = 'image___children___parent___id',
+  ImageCtime = 'image___ctime',
+  ImageCtimeMs = 'image___ctimeMs',
+  ImageDev = 'image___dev',
+  ImageDir = 'image___dir',
+  ImageExt = 'image___ext',
+  ImageExtension = 'image___extension',
+  ImageGid = 'image___gid',
+  ImageId = 'image___id',
+  ImageIno = 'image___ino',
+  ImageInternalContent = 'image___internal___content',
+  ImageInternalContentDigest = 'image___internal___contentDigest',
+  ImageInternalDescription = 'image___internal___description',
+  ImageInternalFieldOwners = 'image___internal___fieldOwners',
+  ImageInternalIgnoreType = 'image___internal___ignoreType',
+  ImageInternalMediaType = 'image___internal___mediaType',
+  ImageInternalOwner = 'image___internal___owner',
+  ImageInternalType = 'image___internal___type',
+  ImageMode = 'image___mode',
+  ImageModifiedTime = 'image___modifiedTime',
+  ImageMtime = 'image___mtime',
+  ImageMtimeMs = 'image___mtimeMs',
+  ImageName = 'image___name',
+  ImageNlink = 'image___nlink',
+  ImageParentChildren = 'image___parent___children',
+  ImageParentChildrenChildren = 'image___parent___children___children',
+  ImageParentChildrenId = 'image___parent___children___id',
+  ImageParentId = 'image___parent___id',
+  ImageParentInternalContent = 'image___parent___internal___content',
+  ImageParentInternalContentDigest = 'image___parent___internal___contentDigest',
+  ImageParentInternalDescription = 'image___parent___internal___description',
+  ImageParentInternalFieldOwners = 'image___parent___internal___fieldOwners',
+  ImageParentInternalIgnoreType = 'image___parent___internal___ignoreType',
+  ImageParentInternalMediaType = 'image___parent___internal___mediaType',
+  ImageParentInternalOwner = 'image___parent___internal___owner',
+  ImageParentInternalType = 'image___parent___internal___type',
+  ImageParentParentChildren = 'image___parent___parent___children',
+  ImageParentParentId = 'image___parent___parent___id',
+  ImagePrettySize = 'image___prettySize',
+  ImagePublicUrl = 'image___publicURL',
+  ImageRdev = 'image___rdev',
+  ImageRelativeDirectory = 'image___relativeDirectory',
+  ImageRelativePath = 'image___relativePath',
+  ImageRoot = 'image___root',
+  ImageSize = 'image___size',
+  ImageSourceInstanceName = 'image___sourceInstanceName',
+  ImageUid = 'image___uid',
+  InternalContent = 'internal___content',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalDescription = 'internal___description',
+  InternalFieldOwners = 'internal___fieldOwners',
+  InternalIgnoreType = 'internal___ignoreType',
+  InternalMediaType = 'internal___mediaType',
+  InternalOwner = 'internal___owner',
+  InternalType = 'internal___type',
+  Name = 'name',
+  ParentChildren = 'parent___children',
+  ParentChildrenChildren = 'parent___children___children',
+  ParentChildrenChildrenChildren = 'parent___children___children___children',
+  ParentChildrenChildrenId = 'parent___children___children___id',
+  ParentChildrenId = 'parent___children___id',
+  ParentChildrenInternalContent = 'parent___children___internal___content',
+  ParentChildrenInternalContentDigest = 'parent___children___internal___contentDigest',
+  ParentChildrenInternalDescription = 'parent___children___internal___description',
+  ParentChildrenInternalFieldOwners = 'parent___children___internal___fieldOwners',
+  ParentChildrenInternalIgnoreType = 'parent___children___internal___ignoreType',
+  ParentChildrenInternalMediaType = 'parent___children___internal___mediaType',
+  ParentChildrenInternalOwner = 'parent___children___internal___owner',
+  ParentChildrenInternalType = 'parent___children___internal___type',
+  ParentChildrenParentChildren = 'parent___children___parent___children',
+  ParentChildrenParentId = 'parent___children___parent___id',
+  ParentId = 'parent___id',
+  ParentInternalContent = 'parent___internal___content',
+  ParentInternalContentDigest = 'parent___internal___contentDigest',
+  ParentInternalDescription = 'parent___internal___description',
+  ParentInternalFieldOwners = 'parent___internal___fieldOwners',
+  ParentInternalIgnoreType = 'parent___internal___ignoreType',
+  ParentInternalMediaType = 'parent___internal___mediaType',
+  ParentInternalOwner = 'parent___internal___owner',
+  ParentInternalType = 'parent___internal___type',
+  ParentParentChildren = 'parent___parent___children',
+  ParentParentChildrenChildren = 'parent___parent___children___children',
+  ParentParentChildrenId = 'parent___parent___children___id',
+  ParentParentId = 'parent___parent___id',
+  ParentParentInternalContent = 'parent___parent___internal___content',
+  ParentParentInternalContentDigest = 'parent___parent___internal___contentDigest',
+  ParentParentInternalDescription = 'parent___parent___internal___description',
+  ParentParentInternalFieldOwners = 'parent___parent___internal___fieldOwners',
+  ParentParentInternalIgnoreType = 'parent___parent___internal___ignoreType',
+  ParentParentInternalMediaType = 'parent___parent___internal___mediaType',
+  ParentParentInternalOwner = 'parent___parent___internal___owner',
+  ParentParentInternalType = 'parent___parent___internal___type',
+  ParentParentParentChildren = 'parent___parent___parent___children',
+  ParentParentParentId = 'parent___parent___parent___id',
+  Url = 'url'
+}
+
+export type AstronautsJsonFilterInput = {
+  children?: InputMaybe<NodeFilterListInput>;
+  desc?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  image?: InputMaybe<FileFilterInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  name?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  url?: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type AstronautsJsonFilterListInput = {
+  elemMatch?: InputMaybe<AstronautsJsonFilterInput>;
+};
+
+export type AstronautsJsonGroupConnection = {
+  __typename?: 'AstronautsJsonGroupConnection';
+  edges: Array<AstronautsJsonEdge>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+  nodes: Array<AstronautsJson>;
+  pageInfo: PageInfo;
+  totalCount: Scalars['Int'];
+};
+
+export type AstronautsJsonSortInput = {
+  fields?: InputMaybe<Array<InputMaybe<AstronautsJsonFieldsEnum>>>;
+  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
 };
 
 export type BlurredOptions = {
@@ -94,12 +592,14 @@ export type Directory = Node & {
   uid: Scalars['Int'];
 };
 
+
 export type DirectoryAccessTimeArgs = {
   difference?: InputMaybe<Scalars['String']>;
   formatString?: InputMaybe<Scalars['String']>;
   fromNow?: InputMaybe<Scalars['Boolean']>;
   locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type DirectoryAtimeArgs = {
   difference?: InputMaybe<Scalars['String']>;
@@ -108,12 +608,14 @@ export type DirectoryAtimeArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
+
 export type DirectoryBirthTimeArgs = {
   difference?: InputMaybe<Scalars['String']>;
   formatString?: InputMaybe<Scalars['String']>;
   fromNow?: InputMaybe<Scalars['Boolean']>;
   locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type DirectoryChangeTimeArgs = {
   difference?: InputMaybe<Scalars['String']>;
@@ -122,6 +624,7 @@ export type DirectoryChangeTimeArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
+
 export type DirectoryCtimeArgs = {
   difference?: InputMaybe<Scalars['String']>;
   formatString?: InputMaybe<Scalars['String']>;
@@ -129,12 +632,14 @@ export type DirectoryCtimeArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
+
 export type DirectoryModifiedTimeArgs = {
   difference?: InputMaybe<Scalars['String']>;
   formatString?: InputMaybe<Scalars['String']>;
   fromNow?: InputMaybe<Scalars['Boolean']>;
   locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type DirectoryMtimeArgs = {
   difference?: InputMaybe<Scalars['String']>;
@@ -153,9 +658,11 @@ export type DirectoryConnection = {
   totalCount: Scalars['Int'];
 };
 
+
 export type DirectoryConnectionDistinctArgs = {
   field: DirectoryFieldsEnum;
 };
+
 
 export type DirectoryConnectionGroupArgs = {
   field: DirectoryFieldsEnum;
@@ -289,7 +796,7 @@ export enum DirectoryFieldsEnum {
   Root = 'root',
   Size = 'size',
   SourceInstanceName = 'sourceInstanceName',
-  Uid = 'uid',
+  Uid = 'uid'
 }
 
 export type DirectoryFilterInput = {
@@ -368,11 +875,15 @@ export type File = Node & {
   blksize?: Maybe<Scalars['Int']>;
   blocks?: Maybe<Scalars['Int']>;
   changeTime: Scalars['Date'];
+  /** Returns the first child node of type AstronautsJson or null if there are no children of given type on this node */
+  childAstronautsJson?: Maybe<AstronautsJson>;
   /** Returns the first child node of type ImageSharp or null if there are no children of given type on this node */
   childImageSharp?: Maybe<ImageSharp>;
   /** Returns the first child node of type MarkdownRemark or null if there are no children of given type on this node */
   childMarkdownRemark?: Maybe<MarkdownRemark>;
   children: Array<Node>;
+  /** Returns all children nodes filtered by type AstronautsJson */
+  childrenAstronautsJson?: Maybe<Array<Maybe<AstronautsJson>>>;
   /** Returns all children nodes filtered by type ImageSharp */
   childrenImageSharp?: Maybe<Array<Maybe<ImageSharp>>>;
   /** Returns all children nodes filtered by type MarkdownRemark */
@@ -406,12 +917,14 @@ export type File = Node & {
   uid: Scalars['Int'];
 };
 
+
 export type FileAccessTimeArgs = {
   difference?: InputMaybe<Scalars['String']>;
   formatString?: InputMaybe<Scalars['String']>;
   fromNow?: InputMaybe<Scalars['Boolean']>;
   locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type FileAtimeArgs = {
   difference?: InputMaybe<Scalars['String']>;
@@ -420,12 +933,14 @@ export type FileAtimeArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
+
 export type FileBirthTimeArgs = {
   difference?: InputMaybe<Scalars['String']>;
   formatString?: InputMaybe<Scalars['String']>;
   fromNow?: InputMaybe<Scalars['Boolean']>;
   locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type FileChangeTimeArgs = {
   difference?: InputMaybe<Scalars['String']>;
@@ -434,6 +949,7 @@ export type FileChangeTimeArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
+
 export type FileCtimeArgs = {
   difference?: InputMaybe<Scalars['String']>;
   formatString?: InputMaybe<Scalars['String']>;
@@ -441,12 +957,14 @@ export type FileCtimeArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
+
 export type FileModifiedTimeArgs = {
   difference?: InputMaybe<Scalars['String']>;
   formatString?: InputMaybe<Scalars['String']>;
   fromNow?: InputMaybe<Scalars['Boolean']>;
   locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type FileMtimeArgs = {
   difference?: InputMaybe<Scalars['String']>;
@@ -465,9 +983,11 @@ export type FileConnection = {
   totalCount: Scalars['Int'];
 };
 
+
 export type FileConnectionDistinctArgs = {
   field: FileFieldsEnum;
 };
+
 
 export type FileConnectionGroupArgs = {
   field: FileFieldsEnum;
@@ -494,6 +1014,136 @@ export enum FileFieldsEnum {
   Blksize = 'blksize',
   Blocks = 'blocks',
   ChangeTime = 'changeTime',
+  ChildAstronautsJsonChildren = 'childAstronautsJson___children',
+  ChildAstronautsJsonChildrenChildren = 'childAstronautsJson___children___children',
+  ChildAstronautsJsonChildrenChildrenChildren = 'childAstronautsJson___children___children___children',
+  ChildAstronautsJsonChildrenChildrenId = 'childAstronautsJson___children___children___id',
+  ChildAstronautsJsonChildrenId = 'childAstronautsJson___children___id',
+  ChildAstronautsJsonChildrenInternalContent = 'childAstronautsJson___children___internal___content',
+  ChildAstronautsJsonChildrenInternalContentDigest = 'childAstronautsJson___children___internal___contentDigest',
+  ChildAstronautsJsonChildrenInternalDescription = 'childAstronautsJson___children___internal___description',
+  ChildAstronautsJsonChildrenInternalFieldOwners = 'childAstronautsJson___children___internal___fieldOwners',
+  ChildAstronautsJsonChildrenInternalIgnoreType = 'childAstronautsJson___children___internal___ignoreType',
+  ChildAstronautsJsonChildrenInternalMediaType = 'childAstronautsJson___children___internal___mediaType',
+  ChildAstronautsJsonChildrenInternalOwner = 'childAstronautsJson___children___internal___owner',
+  ChildAstronautsJsonChildrenInternalType = 'childAstronautsJson___children___internal___type',
+  ChildAstronautsJsonChildrenParentChildren = 'childAstronautsJson___children___parent___children',
+  ChildAstronautsJsonChildrenParentId = 'childAstronautsJson___children___parent___id',
+  ChildAstronautsJsonDesc = 'childAstronautsJson___desc',
+  ChildAstronautsJsonId = 'childAstronautsJson___id',
+  ChildAstronautsJsonImageAbsolutePath = 'childAstronautsJson___image___absolutePath',
+  ChildAstronautsJsonImageAccessTime = 'childAstronautsJson___image___accessTime',
+  ChildAstronautsJsonImageAtime = 'childAstronautsJson___image___atime',
+  ChildAstronautsJsonImageAtimeMs = 'childAstronautsJson___image___atimeMs',
+  ChildAstronautsJsonImageBase = 'childAstronautsJson___image___base',
+  ChildAstronautsJsonImageBirthTime = 'childAstronautsJson___image___birthTime',
+  ChildAstronautsJsonImageBirthtime = 'childAstronautsJson___image___birthtime',
+  ChildAstronautsJsonImageBirthtimeMs = 'childAstronautsJson___image___birthtimeMs',
+  ChildAstronautsJsonImageBlksize = 'childAstronautsJson___image___blksize',
+  ChildAstronautsJsonImageBlocks = 'childAstronautsJson___image___blocks',
+  ChildAstronautsJsonImageChangeTime = 'childAstronautsJson___image___changeTime',
+  ChildAstronautsJsonImageChildAstronautsJsonChildren = 'childAstronautsJson___image___childAstronautsJson___children',
+  ChildAstronautsJsonImageChildAstronautsJsonDesc = 'childAstronautsJson___image___childAstronautsJson___desc',
+  ChildAstronautsJsonImageChildAstronautsJsonId = 'childAstronautsJson___image___childAstronautsJson___id',
+  ChildAstronautsJsonImageChildAstronautsJsonName = 'childAstronautsJson___image___childAstronautsJson___name',
+  ChildAstronautsJsonImageChildAstronautsJsonUrl = 'childAstronautsJson___image___childAstronautsJson___url',
+  ChildAstronautsJsonImageChildImageSharpChildren = 'childAstronautsJson___image___childImageSharp___children',
+  ChildAstronautsJsonImageChildImageSharpGatsbyImageData = 'childAstronautsJson___image___childImageSharp___gatsbyImageData',
+  ChildAstronautsJsonImageChildImageSharpId = 'childAstronautsJson___image___childImageSharp___id',
+  ChildAstronautsJsonImageChildMarkdownRemarkChildren = 'childAstronautsJson___image___childMarkdownRemark___children',
+  ChildAstronautsJsonImageChildMarkdownRemarkExcerpt = 'childAstronautsJson___image___childMarkdownRemark___excerpt',
+  ChildAstronautsJsonImageChildMarkdownRemarkExcerptAst = 'childAstronautsJson___image___childMarkdownRemark___excerptAst',
+  ChildAstronautsJsonImageChildMarkdownRemarkFileAbsolutePath = 'childAstronautsJson___image___childMarkdownRemark___fileAbsolutePath',
+  ChildAstronautsJsonImageChildMarkdownRemarkHeadings = 'childAstronautsJson___image___childMarkdownRemark___headings',
+  ChildAstronautsJsonImageChildMarkdownRemarkHtml = 'childAstronautsJson___image___childMarkdownRemark___html',
+  ChildAstronautsJsonImageChildMarkdownRemarkHtmlAst = 'childAstronautsJson___image___childMarkdownRemark___htmlAst',
+  ChildAstronautsJsonImageChildMarkdownRemarkId = 'childAstronautsJson___image___childMarkdownRemark___id',
+  ChildAstronautsJsonImageChildMarkdownRemarkRawMarkdownBody = 'childAstronautsJson___image___childMarkdownRemark___rawMarkdownBody',
+  ChildAstronautsJsonImageChildMarkdownRemarkTableOfContents = 'childAstronautsJson___image___childMarkdownRemark___tableOfContents',
+  ChildAstronautsJsonImageChildMarkdownRemarkTimeToRead = 'childAstronautsJson___image___childMarkdownRemark___timeToRead',
+  ChildAstronautsJsonImageChildren = 'childAstronautsJson___image___children',
+  ChildAstronautsJsonImageChildrenAstronautsJson = 'childAstronautsJson___image___childrenAstronautsJson',
+  ChildAstronautsJsonImageChildrenAstronautsJsonChildren = 'childAstronautsJson___image___childrenAstronautsJson___children',
+  ChildAstronautsJsonImageChildrenAstronautsJsonDesc = 'childAstronautsJson___image___childrenAstronautsJson___desc',
+  ChildAstronautsJsonImageChildrenAstronautsJsonId = 'childAstronautsJson___image___childrenAstronautsJson___id',
+  ChildAstronautsJsonImageChildrenAstronautsJsonName = 'childAstronautsJson___image___childrenAstronautsJson___name',
+  ChildAstronautsJsonImageChildrenAstronautsJsonUrl = 'childAstronautsJson___image___childrenAstronautsJson___url',
+  ChildAstronautsJsonImageChildrenImageSharp = 'childAstronautsJson___image___childrenImageSharp',
+  ChildAstronautsJsonImageChildrenImageSharpChildren = 'childAstronautsJson___image___childrenImageSharp___children',
+  ChildAstronautsJsonImageChildrenImageSharpGatsbyImageData = 'childAstronautsJson___image___childrenImageSharp___gatsbyImageData',
+  ChildAstronautsJsonImageChildrenImageSharpId = 'childAstronautsJson___image___childrenImageSharp___id',
+  ChildAstronautsJsonImageChildrenMarkdownRemark = 'childAstronautsJson___image___childrenMarkdownRemark',
+  ChildAstronautsJsonImageChildrenMarkdownRemarkChildren = 'childAstronautsJson___image___childrenMarkdownRemark___children',
+  ChildAstronautsJsonImageChildrenMarkdownRemarkExcerpt = 'childAstronautsJson___image___childrenMarkdownRemark___excerpt',
+  ChildAstronautsJsonImageChildrenMarkdownRemarkExcerptAst = 'childAstronautsJson___image___childrenMarkdownRemark___excerptAst',
+  ChildAstronautsJsonImageChildrenMarkdownRemarkFileAbsolutePath = 'childAstronautsJson___image___childrenMarkdownRemark___fileAbsolutePath',
+  ChildAstronautsJsonImageChildrenMarkdownRemarkHeadings = 'childAstronautsJson___image___childrenMarkdownRemark___headings',
+  ChildAstronautsJsonImageChildrenMarkdownRemarkHtml = 'childAstronautsJson___image___childrenMarkdownRemark___html',
+  ChildAstronautsJsonImageChildrenMarkdownRemarkHtmlAst = 'childAstronautsJson___image___childrenMarkdownRemark___htmlAst',
+  ChildAstronautsJsonImageChildrenMarkdownRemarkId = 'childAstronautsJson___image___childrenMarkdownRemark___id',
+  ChildAstronautsJsonImageChildrenMarkdownRemarkRawMarkdownBody = 'childAstronautsJson___image___childrenMarkdownRemark___rawMarkdownBody',
+  ChildAstronautsJsonImageChildrenMarkdownRemarkTableOfContents = 'childAstronautsJson___image___childrenMarkdownRemark___tableOfContents',
+  ChildAstronautsJsonImageChildrenMarkdownRemarkTimeToRead = 'childAstronautsJson___image___childrenMarkdownRemark___timeToRead',
+  ChildAstronautsJsonImageChildrenChildren = 'childAstronautsJson___image___children___children',
+  ChildAstronautsJsonImageChildrenId = 'childAstronautsJson___image___children___id',
+  ChildAstronautsJsonImageCtime = 'childAstronautsJson___image___ctime',
+  ChildAstronautsJsonImageCtimeMs = 'childAstronautsJson___image___ctimeMs',
+  ChildAstronautsJsonImageDev = 'childAstronautsJson___image___dev',
+  ChildAstronautsJsonImageDir = 'childAstronautsJson___image___dir',
+  ChildAstronautsJsonImageExt = 'childAstronautsJson___image___ext',
+  ChildAstronautsJsonImageExtension = 'childAstronautsJson___image___extension',
+  ChildAstronautsJsonImageGid = 'childAstronautsJson___image___gid',
+  ChildAstronautsJsonImageId = 'childAstronautsJson___image___id',
+  ChildAstronautsJsonImageIno = 'childAstronautsJson___image___ino',
+  ChildAstronautsJsonImageInternalContent = 'childAstronautsJson___image___internal___content',
+  ChildAstronautsJsonImageInternalContentDigest = 'childAstronautsJson___image___internal___contentDigest',
+  ChildAstronautsJsonImageInternalDescription = 'childAstronautsJson___image___internal___description',
+  ChildAstronautsJsonImageInternalFieldOwners = 'childAstronautsJson___image___internal___fieldOwners',
+  ChildAstronautsJsonImageInternalIgnoreType = 'childAstronautsJson___image___internal___ignoreType',
+  ChildAstronautsJsonImageInternalMediaType = 'childAstronautsJson___image___internal___mediaType',
+  ChildAstronautsJsonImageInternalOwner = 'childAstronautsJson___image___internal___owner',
+  ChildAstronautsJsonImageInternalType = 'childAstronautsJson___image___internal___type',
+  ChildAstronautsJsonImageMode = 'childAstronautsJson___image___mode',
+  ChildAstronautsJsonImageModifiedTime = 'childAstronautsJson___image___modifiedTime',
+  ChildAstronautsJsonImageMtime = 'childAstronautsJson___image___mtime',
+  ChildAstronautsJsonImageMtimeMs = 'childAstronautsJson___image___mtimeMs',
+  ChildAstronautsJsonImageName = 'childAstronautsJson___image___name',
+  ChildAstronautsJsonImageNlink = 'childAstronautsJson___image___nlink',
+  ChildAstronautsJsonImageParentChildren = 'childAstronautsJson___image___parent___children',
+  ChildAstronautsJsonImageParentId = 'childAstronautsJson___image___parent___id',
+  ChildAstronautsJsonImagePrettySize = 'childAstronautsJson___image___prettySize',
+  ChildAstronautsJsonImagePublicUrl = 'childAstronautsJson___image___publicURL',
+  ChildAstronautsJsonImageRdev = 'childAstronautsJson___image___rdev',
+  ChildAstronautsJsonImageRelativeDirectory = 'childAstronautsJson___image___relativeDirectory',
+  ChildAstronautsJsonImageRelativePath = 'childAstronautsJson___image___relativePath',
+  ChildAstronautsJsonImageRoot = 'childAstronautsJson___image___root',
+  ChildAstronautsJsonImageSize = 'childAstronautsJson___image___size',
+  ChildAstronautsJsonImageSourceInstanceName = 'childAstronautsJson___image___sourceInstanceName',
+  ChildAstronautsJsonImageUid = 'childAstronautsJson___image___uid',
+  ChildAstronautsJsonInternalContent = 'childAstronautsJson___internal___content',
+  ChildAstronautsJsonInternalContentDigest = 'childAstronautsJson___internal___contentDigest',
+  ChildAstronautsJsonInternalDescription = 'childAstronautsJson___internal___description',
+  ChildAstronautsJsonInternalFieldOwners = 'childAstronautsJson___internal___fieldOwners',
+  ChildAstronautsJsonInternalIgnoreType = 'childAstronautsJson___internal___ignoreType',
+  ChildAstronautsJsonInternalMediaType = 'childAstronautsJson___internal___mediaType',
+  ChildAstronautsJsonInternalOwner = 'childAstronautsJson___internal___owner',
+  ChildAstronautsJsonInternalType = 'childAstronautsJson___internal___type',
+  ChildAstronautsJsonName = 'childAstronautsJson___name',
+  ChildAstronautsJsonParentChildren = 'childAstronautsJson___parent___children',
+  ChildAstronautsJsonParentChildrenChildren = 'childAstronautsJson___parent___children___children',
+  ChildAstronautsJsonParentChildrenId = 'childAstronautsJson___parent___children___id',
+  ChildAstronautsJsonParentId = 'childAstronautsJson___parent___id',
+  ChildAstronautsJsonParentInternalContent = 'childAstronautsJson___parent___internal___content',
+  ChildAstronautsJsonParentInternalContentDigest = 'childAstronautsJson___parent___internal___contentDigest',
+  ChildAstronautsJsonParentInternalDescription = 'childAstronautsJson___parent___internal___description',
+  ChildAstronautsJsonParentInternalFieldOwners = 'childAstronautsJson___parent___internal___fieldOwners',
+  ChildAstronautsJsonParentInternalIgnoreType = 'childAstronautsJson___parent___internal___ignoreType',
+  ChildAstronautsJsonParentInternalMediaType = 'childAstronautsJson___parent___internal___mediaType',
+  ChildAstronautsJsonParentInternalOwner = 'childAstronautsJson___parent___internal___owner',
+  ChildAstronautsJsonParentInternalType = 'childAstronautsJson___parent___internal___type',
+  ChildAstronautsJsonParentParentChildren = 'childAstronautsJson___parent___parent___children',
+  ChildAstronautsJsonParentParentId = 'childAstronautsJson___parent___parent___id',
+  ChildAstronautsJsonUrl = 'childAstronautsJson___url',
   ChildImageSharpChildren = 'childImageSharp___children',
   ChildImageSharpChildrenChildren = 'childImageSharp___children___children',
   ChildImageSharpChildrenChildrenChildren = 'childImageSharp___children___children___children',
@@ -619,6 +1269,137 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkWordCountSentences = 'childMarkdownRemark___wordCount___sentences',
   ChildMarkdownRemarkWordCountWords = 'childMarkdownRemark___wordCount___words',
   Children = 'children',
+  ChildrenAstronautsJson = 'childrenAstronautsJson',
+  ChildrenAstronautsJsonChildren = 'childrenAstronautsJson___children',
+  ChildrenAstronautsJsonChildrenChildren = 'childrenAstronautsJson___children___children',
+  ChildrenAstronautsJsonChildrenChildrenChildren = 'childrenAstronautsJson___children___children___children',
+  ChildrenAstronautsJsonChildrenChildrenId = 'childrenAstronautsJson___children___children___id',
+  ChildrenAstronautsJsonChildrenId = 'childrenAstronautsJson___children___id',
+  ChildrenAstronautsJsonChildrenInternalContent = 'childrenAstronautsJson___children___internal___content',
+  ChildrenAstronautsJsonChildrenInternalContentDigest = 'childrenAstronautsJson___children___internal___contentDigest',
+  ChildrenAstronautsJsonChildrenInternalDescription = 'childrenAstronautsJson___children___internal___description',
+  ChildrenAstronautsJsonChildrenInternalFieldOwners = 'childrenAstronautsJson___children___internal___fieldOwners',
+  ChildrenAstronautsJsonChildrenInternalIgnoreType = 'childrenAstronautsJson___children___internal___ignoreType',
+  ChildrenAstronautsJsonChildrenInternalMediaType = 'childrenAstronautsJson___children___internal___mediaType',
+  ChildrenAstronautsJsonChildrenInternalOwner = 'childrenAstronautsJson___children___internal___owner',
+  ChildrenAstronautsJsonChildrenInternalType = 'childrenAstronautsJson___children___internal___type',
+  ChildrenAstronautsJsonChildrenParentChildren = 'childrenAstronautsJson___children___parent___children',
+  ChildrenAstronautsJsonChildrenParentId = 'childrenAstronautsJson___children___parent___id',
+  ChildrenAstronautsJsonDesc = 'childrenAstronautsJson___desc',
+  ChildrenAstronautsJsonId = 'childrenAstronautsJson___id',
+  ChildrenAstronautsJsonImageAbsolutePath = 'childrenAstronautsJson___image___absolutePath',
+  ChildrenAstronautsJsonImageAccessTime = 'childrenAstronautsJson___image___accessTime',
+  ChildrenAstronautsJsonImageAtime = 'childrenAstronautsJson___image___atime',
+  ChildrenAstronautsJsonImageAtimeMs = 'childrenAstronautsJson___image___atimeMs',
+  ChildrenAstronautsJsonImageBase = 'childrenAstronautsJson___image___base',
+  ChildrenAstronautsJsonImageBirthTime = 'childrenAstronautsJson___image___birthTime',
+  ChildrenAstronautsJsonImageBirthtime = 'childrenAstronautsJson___image___birthtime',
+  ChildrenAstronautsJsonImageBirthtimeMs = 'childrenAstronautsJson___image___birthtimeMs',
+  ChildrenAstronautsJsonImageBlksize = 'childrenAstronautsJson___image___blksize',
+  ChildrenAstronautsJsonImageBlocks = 'childrenAstronautsJson___image___blocks',
+  ChildrenAstronautsJsonImageChangeTime = 'childrenAstronautsJson___image___changeTime',
+  ChildrenAstronautsJsonImageChildAstronautsJsonChildren = 'childrenAstronautsJson___image___childAstronautsJson___children',
+  ChildrenAstronautsJsonImageChildAstronautsJsonDesc = 'childrenAstronautsJson___image___childAstronautsJson___desc',
+  ChildrenAstronautsJsonImageChildAstronautsJsonId = 'childrenAstronautsJson___image___childAstronautsJson___id',
+  ChildrenAstronautsJsonImageChildAstronautsJsonName = 'childrenAstronautsJson___image___childAstronautsJson___name',
+  ChildrenAstronautsJsonImageChildAstronautsJsonUrl = 'childrenAstronautsJson___image___childAstronautsJson___url',
+  ChildrenAstronautsJsonImageChildImageSharpChildren = 'childrenAstronautsJson___image___childImageSharp___children',
+  ChildrenAstronautsJsonImageChildImageSharpGatsbyImageData = 'childrenAstronautsJson___image___childImageSharp___gatsbyImageData',
+  ChildrenAstronautsJsonImageChildImageSharpId = 'childrenAstronautsJson___image___childImageSharp___id',
+  ChildrenAstronautsJsonImageChildMarkdownRemarkChildren = 'childrenAstronautsJson___image___childMarkdownRemark___children',
+  ChildrenAstronautsJsonImageChildMarkdownRemarkExcerpt = 'childrenAstronautsJson___image___childMarkdownRemark___excerpt',
+  ChildrenAstronautsJsonImageChildMarkdownRemarkExcerptAst = 'childrenAstronautsJson___image___childMarkdownRemark___excerptAst',
+  ChildrenAstronautsJsonImageChildMarkdownRemarkFileAbsolutePath = 'childrenAstronautsJson___image___childMarkdownRemark___fileAbsolutePath',
+  ChildrenAstronautsJsonImageChildMarkdownRemarkHeadings = 'childrenAstronautsJson___image___childMarkdownRemark___headings',
+  ChildrenAstronautsJsonImageChildMarkdownRemarkHtml = 'childrenAstronautsJson___image___childMarkdownRemark___html',
+  ChildrenAstronautsJsonImageChildMarkdownRemarkHtmlAst = 'childrenAstronautsJson___image___childMarkdownRemark___htmlAst',
+  ChildrenAstronautsJsonImageChildMarkdownRemarkId = 'childrenAstronautsJson___image___childMarkdownRemark___id',
+  ChildrenAstronautsJsonImageChildMarkdownRemarkRawMarkdownBody = 'childrenAstronautsJson___image___childMarkdownRemark___rawMarkdownBody',
+  ChildrenAstronautsJsonImageChildMarkdownRemarkTableOfContents = 'childrenAstronautsJson___image___childMarkdownRemark___tableOfContents',
+  ChildrenAstronautsJsonImageChildMarkdownRemarkTimeToRead = 'childrenAstronautsJson___image___childMarkdownRemark___timeToRead',
+  ChildrenAstronautsJsonImageChildren = 'childrenAstronautsJson___image___children',
+  ChildrenAstronautsJsonImageChildrenAstronautsJson = 'childrenAstronautsJson___image___childrenAstronautsJson',
+  ChildrenAstronautsJsonImageChildrenAstronautsJsonChildren = 'childrenAstronautsJson___image___childrenAstronautsJson___children',
+  ChildrenAstronautsJsonImageChildrenAstronautsJsonDesc = 'childrenAstronautsJson___image___childrenAstronautsJson___desc',
+  ChildrenAstronautsJsonImageChildrenAstronautsJsonId = 'childrenAstronautsJson___image___childrenAstronautsJson___id',
+  ChildrenAstronautsJsonImageChildrenAstronautsJsonName = 'childrenAstronautsJson___image___childrenAstronautsJson___name',
+  ChildrenAstronautsJsonImageChildrenAstronautsJsonUrl = 'childrenAstronautsJson___image___childrenAstronautsJson___url',
+  ChildrenAstronautsJsonImageChildrenImageSharp = 'childrenAstronautsJson___image___childrenImageSharp',
+  ChildrenAstronautsJsonImageChildrenImageSharpChildren = 'childrenAstronautsJson___image___childrenImageSharp___children',
+  ChildrenAstronautsJsonImageChildrenImageSharpGatsbyImageData = 'childrenAstronautsJson___image___childrenImageSharp___gatsbyImageData',
+  ChildrenAstronautsJsonImageChildrenImageSharpId = 'childrenAstronautsJson___image___childrenImageSharp___id',
+  ChildrenAstronautsJsonImageChildrenMarkdownRemark = 'childrenAstronautsJson___image___childrenMarkdownRemark',
+  ChildrenAstronautsJsonImageChildrenMarkdownRemarkChildren = 'childrenAstronautsJson___image___childrenMarkdownRemark___children',
+  ChildrenAstronautsJsonImageChildrenMarkdownRemarkExcerpt = 'childrenAstronautsJson___image___childrenMarkdownRemark___excerpt',
+  ChildrenAstronautsJsonImageChildrenMarkdownRemarkExcerptAst = 'childrenAstronautsJson___image___childrenMarkdownRemark___excerptAst',
+  ChildrenAstronautsJsonImageChildrenMarkdownRemarkFileAbsolutePath = 'childrenAstronautsJson___image___childrenMarkdownRemark___fileAbsolutePath',
+  ChildrenAstronautsJsonImageChildrenMarkdownRemarkHeadings = 'childrenAstronautsJson___image___childrenMarkdownRemark___headings',
+  ChildrenAstronautsJsonImageChildrenMarkdownRemarkHtml = 'childrenAstronautsJson___image___childrenMarkdownRemark___html',
+  ChildrenAstronautsJsonImageChildrenMarkdownRemarkHtmlAst = 'childrenAstronautsJson___image___childrenMarkdownRemark___htmlAst',
+  ChildrenAstronautsJsonImageChildrenMarkdownRemarkId = 'childrenAstronautsJson___image___childrenMarkdownRemark___id',
+  ChildrenAstronautsJsonImageChildrenMarkdownRemarkRawMarkdownBody = 'childrenAstronautsJson___image___childrenMarkdownRemark___rawMarkdownBody',
+  ChildrenAstronautsJsonImageChildrenMarkdownRemarkTableOfContents = 'childrenAstronautsJson___image___childrenMarkdownRemark___tableOfContents',
+  ChildrenAstronautsJsonImageChildrenMarkdownRemarkTimeToRead = 'childrenAstronautsJson___image___childrenMarkdownRemark___timeToRead',
+  ChildrenAstronautsJsonImageChildrenChildren = 'childrenAstronautsJson___image___children___children',
+  ChildrenAstronautsJsonImageChildrenId = 'childrenAstronautsJson___image___children___id',
+  ChildrenAstronautsJsonImageCtime = 'childrenAstronautsJson___image___ctime',
+  ChildrenAstronautsJsonImageCtimeMs = 'childrenAstronautsJson___image___ctimeMs',
+  ChildrenAstronautsJsonImageDev = 'childrenAstronautsJson___image___dev',
+  ChildrenAstronautsJsonImageDir = 'childrenAstronautsJson___image___dir',
+  ChildrenAstronautsJsonImageExt = 'childrenAstronautsJson___image___ext',
+  ChildrenAstronautsJsonImageExtension = 'childrenAstronautsJson___image___extension',
+  ChildrenAstronautsJsonImageGid = 'childrenAstronautsJson___image___gid',
+  ChildrenAstronautsJsonImageId = 'childrenAstronautsJson___image___id',
+  ChildrenAstronautsJsonImageIno = 'childrenAstronautsJson___image___ino',
+  ChildrenAstronautsJsonImageInternalContent = 'childrenAstronautsJson___image___internal___content',
+  ChildrenAstronautsJsonImageInternalContentDigest = 'childrenAstronautsJson___image___internal___contentDigest',
+  ChildrenAstronautsJsonImageInternalDescription = 'childrenAstronautsJson___image___internal___description',
+  ChildrenAstronautsJsonImageInternalFieldOwners = 'childrenAstronautsJson___image___internal___fieldOwners',
+  ChildrenAstronautsJsonImageInternalIgnoreType = 'childrenAstronautsJson___image___internal___ignoreType',
+  ChildrenAstronautsJsonImageInternalMediaType = 'childrenAstronautsJson___image___internal___mediaType',
+  ChildrenAstronautsJsonImageInternalOwner = 'childrenAstronautsJson___image___internal___owner',
+  ChildrenAstronautsJsonImageInternalType = 'childrenAstronautsJson___image___internal___type',
+  ChildrenAstronautsJsonImageMode = 'childrenAstronautsJson___image___mode',
+  ChildrenAstronautsJsonImageModifiedTime = 'childrenAstronautsJson___image___modifiedTime',
+  ChildrenAstronautsJsonImageMtime = 'childrenAstronautsJson___image___mtime',
+  ChildrenAstronautsJsonImageMtimeMs = 'childrenAstronautsJson___image___mtimeMs',
+  ChildrenAstronautsJsonImageName = 'childrenAstronautsJson___image___name',
+  ChildrenAstronautsJsonImageNlink = 'childrenAstronautsJson___image___nlink',
+  ChildrenAstronautsJsonImageParentChildren = 'childrenAstronautsJson___image___parent___children',
+  ChildrenAstronautsJsonImageParentId = 'childrenAstronautsJson___image___parent___id',
+  ChildrenAstronautsJsonImagePrettySize = 'childrenAstronautsJson___image___prettySize',
+  ChildrenAstronautsJsonImagePublicUrl = 'childrenAstronautsJson___image___publicURL',
+  ChildrenAstronautsJsonImageRdev = 'childrenAstronautsJson___image___rdev',
+  ChildrenAstronautsJsonImageRelativeDirectory = 'childrenAstronautsJson___image___relativeDirectory',
+  ChildrenAstronautsJsonImageRelativePath = 'childrenAstronautsJson___image___relativePath',
+  ChildrenAstronautsJsonImageRoot = 'childrenAstronautsJson___image___root',
+  ChildrenAstronautsJsonImageSize = 'childrenAstronautsJson___image___size',
+  ChildrenAstronautsJsonImageSourceInstanceName = 'childrenAstronautsJson___image___sourceInstanceName',
+  ChildrenAstronautsJsonImageUid = 'childrenAstronautsJson___image___uid',
+  ChildrenAstronautsJsonInternalContent = 'childrenAstronautsJson___internal___content',
+  ChildrenAstronautsJsonInternalContentDigest = 'childrenAstronautsJson___internal___contentDigest',
+  ChildrenAstronautsJsonInternalDescription = 'childrenAstronautsJson___internal___description',
+  ChildrenAstronautsJsonInternalFieldOwners = 'childrenAstronautsJson___internal___fieldOwners',
+  ChildrenAstronautsJsonInternalIgnoreType = 'childrenAstronautsJson___internal___ignoreType',
+  ChildrenAstronautsJsonInternalMediaType = 'childrenAstronautsJson___internal___mediaType',
+  ChildrenAstronautsJsonInternalOwner = 'childrenAstronautsJson___internal___owner',
+  ChildrenAstronautsJsonInternalType = 'childrenAstronautsJson___internal___type',
+  ChildrenAstronautsJsonName = 'childrenAstronautsJson___name',
+  ChildrenAstronautsJsonParentChildren = 'childrenAstronautsJson___parent___children',
+  ChildrenAstronautsJsonParentChildrenChildren = 'childrenAstronautsJson___parent___children___children',
+  ChildrenAstronautsJsonParentChildrenId = 'childrenAstronautsJson___parent___children___id',
+  ChildrenAstronautsJsonParentId = 'childrenAstronautsJson___parent___id',
+  ChildrenAstronautsJsonParentInternalContent = 'childrenAstronautsJson___parent___internal___content',
+  ChildrenAstronautsJsonParentInternalContentDigest = 'childrenAstronautsJson___parent___internal___contentDigest',
+  ChildrenAstronautsJsonParentInternalDescription = 'childrenAstronautsJson___parent___internal___description',
+  ChildrenAstronautsJsonParentInternalFieldOwners = 'childrenAstronautsJson___parent___internal___fieldOwners',
+  ChildrenAstronautsJsonParentInternalIgnoreType = 'childrenAstronautsJson___parent___internal___ignoreType',
+  ChildrenAstronautsJsonParentInternalMediaType = 'childrenAstronautsJson___parent___internal___mediaType',
+  ChildrenAstronautsJsonParentInternalOwner = 'childrenAstronautsJson___parent___internal___owner',
+  ChildrenAstronautsJsonParentInternalType = 'childrenAstronautsJson___parent___internal___type',
+  ChildrenAstronautsJsonParentParentChildren = 'childrenAstronautsJson___parent___parent___children',
+  ChildrenAstronautsJsonParentParentId = 'childrenAstronautsJson___parent___parent___id',
+  ChildrenAstronautsJsonUrl = 'childrenAstronautsJson___url',
   ChildrenImageSharp = 'childrenImageSharp',
   ChildrenImageSharpChildren = 'childrenImageSharp___children',
   ChildrenImageSharpChildrenChildren = 'childrenImageSharp___children___children',
@@ -852,7 +1633,7 @@ export enum FileFieldsEnum {
   Root = 'root',
   Size = 'size',
   SourceInstanceName = 'sourceInstanceName',
-  Uid = 'uid',
+  Uid = 'uid'
 }
 
 export type FileFilterInput = {
@@ -867,9 +1648,11 @@ export type FileFilterInput = {
   blksize?: InputMaybe<IntQueryOperatorInput>;
   blocks?: InputMaybe<IntQueryOperatorInput>;
   changeTime?: InputMaybe<DateQueryOperatorInput>;
+  childAstronautsJson?: InputMaybe<AstronautsJsonFilterInput>;
   childImageSharp?: InputMaybe<ImageSharpFilterInput>;
   childMarkdownRemark?: InputMaybe<MarkdownRemarkFilterInput>;
   children?: InputMaybe<NodeFilterListInput>;
+  childrenAstronautsJson?: InputMaybe<AstronautsJsonFilterListInput>;
   childrenImageSharp?: InputMaybe<ImageSharpFilterListInput>;
   childrenMarkdownRemark?: InputMaybe<MarkdownRemarkFilterListInput>;
   ctime?: InputMaybe<DateQueryOperatorInput>;
@@ -937,7 +1720,7 @@ export enum ImageCropFocus {
   South = 'SOUTH',
   Southeast = 'SOUTHEAST',
   Southwest = 'SOUTHWEST',
-  West = 'WEST',
+  West = 'WEST'
 }
 
 export enum ImageFit {
@@ -945,7 +1728,7 @@ export enum ImageFit {
   Cover = 'COVER',
   Fill = 'FILL',
   Inside = 'INSIDE',
-  Outside = 'OUTSIDE',
+  Outside = 'OUTSIDE'
 }
 
 export enum ImageFormat {
@@ -954,20 +1737,20 @@ export enum ImageFormat {
   Jpg = 'JPG',
   NoChange = 'NO_CHANGE',
   Png = 'PNG',
-  Webp = 'WEBP',
+  Webp = 'WEBP'
 }
 
 export enum ImageLayout {
   Constrained = 'CONSTRAINED',
   Fixed = 'FIXED',
-  FullWidth = 'FULL_WIDTH',
+  FullWidth = 'FULL_WIDTH'
 }
 
 export enum ImagePlaceholder {
   Blurred = 'BLURRED',
   DominantColor = 'DOMINANT_COLOR',
   None = 'NONE',
-  TracedSvg = 'TRACED_SVG',
+  TracedSvg = 'TRACED_SVG'
 }
 
 export type ImageSharp = Node & {
@@ -982,6 +1765,7 @@ export type ImageSharp = Node & {
   parent?: Maybe<Node>;
   resize?: Maybe<ImageSharpResize>;
 };
+
 
 export type ImageSharpFixedArgs = {
   background?: InputMaybe<Scalars['String']>;
@@ -1004,6 +1788,7 @@ export type ImageSharpFixedArgs = {
   webpQuality?: InputMaybe<Scalars['Int']>;
   width?: InputMaybe<Scalars['Int']>;
 };
+
 
 export type ImageSharpFluidArgs = {
   background?: InputMaybe<Scalars['String']>;
@@ -1029,6 +1814,7 @@ export type ImageSharpFluidArgs = {
   webpQuality?: InputMaybe<Scalars['Int']>;
 };
 
+
 export type ImageSharpGatsbyImageDataArgs = {
   aspectRatio?: InputMaybe<Scalars['Float']>;
   avifOptions?: InputMaybe<AvifOptions>;
@@ -1049,6 +1835,7 @@ export type ImageSharpGatsbyImageDataArgs = {
   webpOptions?: InputMaybe<WebPOptions>;
   width?: InputMaybe<Scalars['Int']>;
 };
+
 
 export type ImageSharpResizeArgs = {
   background?: InputMaybe<Scalars['String']>;
@@ -1082,9 +1869,11 @@ export type ImageSharpConnection = {
   totalCount: Scalars['Int'];
 };
 
+
 export type ImageSharpConnectionDistinctArgs = {
   field: ImageSharpFieldsEnum;
 };
+
 
 export type ImageSharpConnectionGroupArgs = {
   field: ImageSharpFieldsEnum;
@@ -1217,7 +2006,7 @@ export enum ImageSharpFieldsEnum {
   ResizeOriginalName = 'resize___originalName',
   ResizeSrc = 'resize___src',
   ResizeTracedSvg = 'resize___tracedSVG',
-  ResizeWidth = 'resize___width',
+  ResizeWidth = 'resize___width'
 }
 
 export type ImageSharpFilterInput = {
@@ -1392,7 +2181,7 @@ export type JsonQueryOperatorInput = {
 export enum MarkdownExcerptFormats {
   Html = 'HTML',
   Markdown = 'MARKDOWN',
-  Plain = 'PLAIN',
+  Plain = 'PLAIN'
 }
 
 export type MarkdownHeading = {
@@ -1418,7 +2207,7 @@ export enum MarkdownHeadingLevels {
   H3 = 'h3',
   H4 = 'h4',
   H5 = 'h5',
-  H6 = 'h6',
+  H6 = 'h6'
 }
 
 export type MarkdownRemark = Node & {
@@ -1440,20 +2229,24 @@ export type MarkdownRemark = Node & {
   wordCount?: Maybe<MarkdownWordCount>;
 };
 
+
 export type MarkdownRemarkExcerptArgs = {
   format?: InputMaybe<MarkdownExcerptFormats>;
   pruneLength?: InputMaybe<Scalars['Int']>;
   truncate?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MarkdownRemarkExcerptAstArgs = {
   pruneLength?: InputMaybe<Scalars['Int']>;
   truncate?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MarkdownRemarkHeadingsArgs = {
   depth?: InputMaybe<MarkdownHeadingLevels>;
 };
+
 
 export type MarkdownRemarkTableOfContentsArgs = {
   absolute?: InputMaybe<Scalars['Boolean']>;
@@ -1472,9 +2265,11 @@ export type MarkdownRemarkConnection = {
   totalCount: Scalars['Int'];
 };
 
+
 export type MarkdownRemarkConnectionDistinctArgs = {
   field: MarkdownRemarkFieldsEnum;
 };
+
 
 export type MarkdownRemarkConnectionGroupArgs = {
   field: MarkdownRemarkFieldsEnum;
@@ -1591,7 +2386,7 @@ export enum MarkdownRemarkFieldsEnum {
   TimeToRead = 'timeToRead',
   WordCountParagraphs = 'wordCount___paragraphs',
   WordCountSentences = 'wordCount___sentences',
-  WordCountWords = 'wordCount___words',
+  WordCountWords = 'wordCount___words'
 }
 
 export type MarkdownRemarkFilterInput = {
@@ -1706,11 +2501,12 @@ export enum PotraceTurnPolicy {
   TurnpolicyMajority = 'TURNPOLICY_MAJORITY',
   TurnpolicyMinority = 'TURNPOLICY_MINORITY',
   TurnpolicyRight = 'TURNPOLICY_RIGHT',
-  TurnpolicyWhite = 'TURNPOLICY_WHITE',
+  TurnpolicyWhite = 'TURNPOLICY_WHITE'
 }
 
 export type Query = {
   __typename?: 'Query';
+  allAstronautsJson: AstronautsJsonConnection;
   allDirectory: DirectoryConnection;
   allFile: FileConnection;
   allImageSharp: ImageSharpConnection;
@@ -1719,6 +2515,7 @@ export type Query = {
   allSiteBuildMetadata: SiteBuildMetadataConnection;
   allSitePage: SitePageConnection;
   allSitePlugin: SitePluginConnection;
+  astronautsJson?: Maybe<AstronautsJson>;
   directory?: Maybe<Directory>;
   file?: Maybe<File>;
   imageSharp?: Maybe<ImageSharp>;
@@ -1729,12 +2526,22 @@ export type Query = {
   sitePlugin?: Maybe<SitePlugin>;
 };
 
+
+export type QueryAllAstronautsJsonArgs = {
+  filter?: InputMaybe<AstronautsJsonFilterInput>;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<AstronautsJsonSortInput>;
+};
+
+
 export type QueryAllDirectoryArgs = {
   filter?: InputMaybe<DirectoryFilterInput>;
   limit?: InputMaybe<Scalars['Int']>;
   skip?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<DirectorySortInput>;
 };
+
 
 export type QueryAllFileArgs = {
   filter?: InputMaybe<FileFilterInput>;
@@ -1743,12 +2550,14 @@ export type QueryAllFileArgs = {
   sort?: InputMaybe<FileSortInput>;
 };
 
+
 export type QueryAllImageSharpArgs = {
   filter?: InputMaybe<ImageSharpFilterInput>;
   limit?: InputMaybe<Scalars['Int']>;
   skip?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<ImageSharpSortInput>;
 };
+
 
 export type QueryAllMarkdownRemarkArgs = {
   filter?: InputMaybe<MarkdownRemarkFilterInput>;
@@ -1757,12 +2566,14 @@ export type QueryAllMarkdownRemarkArgs = {
   sort?: InputMaybe<MarkdownRemarkSortInput>;
 };
 
+
 export type QueryAllSiteArgs = {
   filter?: InputMaybe<SiteFilterInput>;
   limit?: InputMaybe<Scalars['Int']>;
   skip?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<SiteSortInput>;
 };
+
 
 export type QueryAllSiteBuildMetadataArgs = {
   filter?: InputMaybe<SiteBuildMetadataFilterInput>;
@@ -1771,6 +2582,7 @@ export type QueryAllSiteBuildMetadataArgs = {
   sort?: InputMaybe<SiteBuildMetadataSortInput>;
 };
 
+
 export type QueryAllSitePageArgs = {
   filter?: InputMaybe<SitePageFilterInput>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -1778,12 +2590,26 @@ export type QueryAllSitePageArgs = {
   sort?: InputMaybe<SitePageSortInput>;
 };
 
+
 export type QueryAllSitePluginArgs = {
   filter?: InputMaybe<SitePluginFilterInput>;
   limit?: InputMaybe<Scalars['Int']>;
   skip?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<SitePluginSortInput>;
 };
+
+
+export type QueryAstronautsJsonArgs = {
+  children?: InputMaybe<NodeFilterListInput>;
+  desc?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  image?: InputMaybe<FileFilterInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  name?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  url?: InputMaybe<StringQueryOperatorInput>;
+};
+
 
 export type QueryDirectoryArgs = {
   absolutePath?: InputMaybe<StringQueryOperatorInput>;
@@ -1825,6 +2651,7 @@ export type QueryDirectoryArgs = {
   uid?: InputMaybe<IntQueryOperatorInput>;
 };
 
+
 export type QueryFileArgs = {
   absolutePath?: InputMaybe<StringQueryOperatorInput>;
   accessTime?: InputMaybe<DateQueryOperatorInput>;
@@ -1837,9 +2664,11 @@ export type QueryFileArgs = {
   blksize?: InputMaybe<IntQueryOperatorInput>;
   blocks?: InputMaybe<IntQueryOperatorInput>;
   changeTime?: InputMaybe<DateQueryOperatorInput>;
+  childAstronautsJson?: InputMaybe<AstronautsJsonFilterInput>;
   childImageSharp?: InputMaybe<ImageSharpFilterInput>;
   childMarkdownRemark?: InputMaybe<MarkdownRemarkFilterInput>;
   children?: InputMaybe<NodeFilterListInput>;
+  childrenAstronautsJson?: InputMaybe<AstronautsJsonFilterListInput>;
   childrenImageSharp?: InputMaybe<ImageSharpFilterListInput>;
   childrenMarkdownRemark?: InputMaybe<MarkdownRemarkFilterListInput>;
   ctime?: InputMaybe<DateQueryOperatorInput>;
@@ -1870,6 +2699,7 @@ export type QueryFileArgs = {
   uid?: InputMaybe<IntQueryOperatorInput>;
 };
 
+
 export type QueryImageSharpArgs = {
   children?: InputMaybe<NodeFilterListInput>;
   fixed?: InputMaybe<ImageSharpFixedFilterInput>;
@@ -1881,6 +2711,7 @@ export type QueryImageSharpArgs = {
   parent?: InputMaybe<NodeFilterInput>;
   resize?: InputMaybe<ImageSharpResizeFilterInput>;
 };
+
 
 export type QueryMarkdownRemarkArgs = {
   children?: InputMaybe<NodeFilterListInput>;
@@ -1900,6 +2731,7 @@ export type QueryMarkdownRemarkArgs = {
   wordCount?: InputMaybe<MarkdownWordCountFilterInput>;
 };
 
+
 export type QuerySiteArgs = {
   buildTime?: InputMaybe<DateQueryOperatorInput>;
   children?: InputMaybe<NodeFilterListInput>;
@@ -1913,6 +2745,7 @@ export type QuerySiteArgs = {
   siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>;
 };
 
+
 export type QuerySiteBuildMetadataArgs = {
   buildTime?: InputMaybe<DateQueryOperatorInput>;
   children?: InputMaybe<NodeFilterListInput>;
@@ -1920,6 +2753,7 @@ export type QuerySiteBuildMetadataArgs = {
   internal?: InputMaybe<InternalFilterInput>;
   parent?: InputMaybe<NodeFilterInput>;
 };
+
 
 export type QuerySitePageArgs = {
   children?: InputMaybe<NodeFilterListInput>;
@@ -1936,6 +2770,7 @@ export type QuerySitePageArgs = {
   pluginCreator?: InputMaybe<SitePluginFilterInput>;
   pluginCreatorId?: InputMaybe<StringQueryOperatorInput>;
 };
+
 
 export type QuerySitePluginArgs = {
   browserAPIs?: InputMaybe<StringQueryOperatorInput>;
@@ -1967,6 +2802,7 @@ export type Site = Node & {
   siteMetadata?: Maybe<SiteSiteMetadata>;
 };
 
+
 export type SiteBuildTimeArgs = {
   difference?: InputMaybe<Scalars['String']>;
   formatString?: InputMaybe<Scalars['String']>;
@@ -1982,6 +2818,7 @@ export type SiteBuildMetadata = Node & {
   internal: Internal;
   parent?: Maybe<Node>;
 };
+
 
 export type SiteBuildMetadataBuildTimeArgs = {
   difference?: InputMaybe<Scalars['String']>;
@@ -2000,9 +2837,11 @@ export type SiteBuildMetadataConnection = {
   totalCount: Scalars['Int'];
 };
 
+
 export type SiteBuildMetadataConnectionDistinctArgs = {
   field: SiteBuildMetadataFieldsEnum;
 };
+
 
 export type SiteBuildMetadataConnectionGroupArgs = {
   field: SiteBuildMetadataFieldsEnum;
@@ -2104,7 +2943,7 @@ export enum SiteBuildMetadataFieldsEnum {
   ParentParentInternalOwner = 'parent___parent___internal___owner',
   ParentParentInternalType = 'parent___parent___internal___type',
   ParentParentParentChildren = 'parent___parent___parent___children',
-  ParentParentParentId = 'parent___parent___parent___id',
+  ParentParentParentId = 'parent___parent___parent___id'
 }
 
 export type SiteBuildMetadataFilterInput = {
@@ -2140,9 +2979,11 @@ export type SiteConnection = {
   totalCount: Scalars['Int'];
 };
 
+
 export type SiteConnectionDistinctArgs = {
   field: SiteFieldsEnum;
 };
+
 
 export type SiteConnectionGroupArgs = {
   field: SiteFieldsEnum;
@@ -2251,7 +3092,7 @@ export enum SiteFieldsEnum {
   Port = 'port',
   SiteMetadataAuthor = 'siteMetadata___author',
   SiteMetadataDescription = 'siteMetadata___description',
-  SiteMetadataTitle = 'siteMetadata___title',
+  SiteMetadataTitle = 'siteMetadata___title'
 }
 
 export type SiteFilterInput = {
@@ -2304,9 +3145,11 @@ export type SitePageConnection = {
   totalCount: Scalars['Int'];
 };
 
+
 export type SitePageConnectionDistinctArgs = {
   field: SitePageFieldsEnum;
 };
+
 
 export type SitePageConnectionGroupArgs = {
   field: SitePageFieldsEnum;
@@ -2505,7 +3348,7 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsTranspileTemplateLiterals = 'pluginCreator___pluginOptions___transpileTemplateLiterals',
   PluginCreatorResolve = 'pluginCreator___resolve',
   PluginCreatorSsrApIs = 'pluginCreator___ssrAPIs',
-  PluginCreatorVersion = 'pluginCreator___version',
+  PluginCreatorVersion = 'pluginCreator___version'
 }
 
 export type SitePageFilterInput = {
@@ -2566,9 +3409,11 @@ export type SitePluginConnection = {
   totalCount: Scalars['Int'];
 };
 
+
 export type SitePluginConnectionDistinctArgs = {
   field: SitePluginFieldsEnum;
 };
+
 
 export type SitePluginConnectionGroupArgs = {
   field: SitePluginFieldsEnum;
@@ -2721,7 +3566,7 @@ export enum SitePluginFieldsEnum {
   PluginOptionsTranspileTemplateLiterals = 'pluginOptions___transpileTemplateLiterals',
   Resolve = 'resolve',
   SsrApIs = 'ssrAPIs',
-  Version = 'version',
+  Version = 'version'
 }
 
 export type SitePluginFilterInput = {
@@ -2912,7 +3757,7 @@ export type SiteSortInput = {
 
 export enum SortOrderEnum {
   Asc = 'ASC',
-  Desc = 'DESC',
+  Desc = 'DESC'
 }
 
 export type StringQueryOperatorInput = {

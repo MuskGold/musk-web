@@ -320,7 +320,10 @@ export const LaunchPrep = () => (
           <Contract>
             <ContractCode>
               <ContractTitle>Contract:</ContractTitle>
-              <ContractInput value="0x6069c9223e8a5da1ec49ac5525d4bb757af72cd8" />
+              <ContractInput
+                readOnly
+                value="0x6069c9223e8a5da1ec49ac5525d4bb757af72cd8"
+              />
             </ContractCode>
             <ContractLink
               href="https://etherscan.io/address/0x6069c9223e8a5da1ec49ac5525d4bb757af72cd8"

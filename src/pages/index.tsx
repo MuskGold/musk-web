@@ -3,6 +3,7 @@ import 'intersection-observer';
 import React, { useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
+import { Astronauts } from '../components/Astronauts';
 import { FlightPath } from '../components/FlightPath';
 import { LaunchPrep } from '../components/LaunchPrep';
 import { Mission } from '../components/Mission';
@@ -31,6 +32,7 @@ export default ({ data }: QueryProps) => {
   const launchPrepRef = useRef<HTMLDivElement>(null);
   const spaceflightRef = useRef<HTMLDivElement>(null);
   const flightpathRef = useRef<HTMLDivElement>(null);
+  const astronautsRef = useRef<HTMLDivElement>(null);
   const anchors = {
     '#home': splashRef,
     '#mission': missionRef,
@@ -38,8 +40,10 @@ export default ({ data }: QueryProps) => {
     '#launchprep': launchPrepRef,
     '#spaceflight': spaceflightRef,
     '#flightpath': flightpathRef,
+    '#astronauts': astronautsRef,
   };
   const copyNodes = data.allMarkdownRemark.nodes;
+  const astroData = data.allAstronautsJson.nodes;
   return (
     <SnapLayout ref={snapRef} isScroll={isScroll} setIsScroll={setIsScroll}>
       <Helmet>
@@ -69,6 +73,9 @@ export default ({ data }: QueryProps) => {
       <Section id="flightpath" ref={flightpathRef}>
         <FlightPath />
       </Section>
+      <Section id="astronauts" ref={astronautsRef}>
+        <Astronauts astroData={astroData} />
+      </Section>
     </SnapLayout>
   );
 };
@@ -80,6 +87,19 @@ export const pageQuery = graphql`
         html
         frontmatter {
           title
+        }
+      }
+    }
+    allAstronautsJson {
+      nodes {
+        id
+        name
+        desc
+        url
+        image {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
         }
       }
     }

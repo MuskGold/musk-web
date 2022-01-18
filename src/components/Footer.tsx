@@ -159,16 +159,16 @@ export const Footer = ({ setIsScroll }: FooterProps) => {
               <LinkImage src={Images.SocialTwitter} alt="Musk Gold Twitter" />
               Twitter
             </SocialLink>
+            <SocialLink href="https://t.me/muskgold" title="Musk Gold Telegram">
+              <LinkImage src={Images.SocialTelegram} alt="Musk Gold Telegram" />
+              Telegram
+            </SocialLink>
             <SocialLink
               href="https://www.reddit.com/r/Muskgold/"
               title="Musk Gold Reddit"
             >
               <LinkImage src={Images.SocialReddit} alt="Musk Gold Reddit" />
               Reddit
-            </SocialLink>
-            <SocialLink href="https://t.me/muskgold" title="Musk Gold Telegram">
-              <LinkImage src={Images.SocialTelegram} alt="Musk Gold Telegram" />
-              Telegram
             </SocialLink>
             <SocialLink
               href="https://discord.gg/UhvXyMQPmK"
@@ -186,10 +186,10 @@ export const Footer = ({ setIsScroll }: FooterProps) => {
             </SocialLink>
           </LinkSet>
           <LinkSet>
-            <SocialLink href="#">Medium</SocialLink>
             <SocialLink href="https://www.instagram.com/muskgoldcrypto/">
               Instagram
             </SocialLink>
+            {/* <SocialLink href="#">Medium</SocialLink> */}
             <SocialLink href="https://www.facebook.com/Muskgoldcrypto/">
               Facebook
             </SocialLink>
