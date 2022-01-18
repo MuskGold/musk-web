@@ -15,7 +15,6 @@
     "codegen": "graphql-codegen"
   },
   "dependencies": {
-    "@graphql-codegen/typescript": "^2.4.2",
     "@inlet/react-pixi": "^6.0.9",
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^3.0.1",
@@ -42,7 +41,6 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^2.3.1",
     "@types/node": "^14.14.25",
     "@types/react": "^17.0.1",
     "@types/react-dom": "^17.0.0",
