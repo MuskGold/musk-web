@@ -16,12 +16,16 @@ const AstroItem = styled.div`
   }
 `;
 
-const Name = styled.div`
+const Name = styled.a`
   font-family: 'Lato';
   color: #fff;
   font-size: 16px;
   font-weight: 700;
   justify-self: center;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const Desc = styled.div`
@@ -32,9 +36,17 @@ const Desc = styled.div`
   justify-self: center;
 `;
 
-const StyledGatsbyImage = styled(GatsbyImage)`
+const Image = styled(GatsbyImage)`
   width: 150px;
   justify-self: center;
+  @media (min-width: 1280px) {
+    width: 170px;
+  }
+`;
+
+const ImageLink = styled.a`
+  display: block;
+  width: 150px;
   @media (min-width: 1280px) {
     width: 170px;
   }
@@ -44,15 +56,27 @@ type AstronautProps = {
   astro: AstronautsJson;
 };
 
-export const Astronaut = ({ astro }: AstronautProps) => (
-  <AstroItem>
-    {astro?.image?.childImageSharp && (
-      <StyledGatsbyImage
-        image={astro.image.childImageSharp.gatsbyImageData}
-        alt={astro.name || ''}
-      />
-    )}
-    <Name>{astro.name}</Name>
-    <Desc>{astro.desc}</Desc>
-  </AstroItem>
-);
+export const Astronaut = ({ astro }: AstronautProps) => {
+  const image = astro?.image?.childImageSharp;
+  const url = astro?.url;
+  const name = astro?.name;
+  const desc = astro?.desc;
+  return (
+    <AstroItem>
+      {image &&
+        (url ? (
+          <ImageLink href={url} target="_blank" rel="noreferrer">
+            <Image image={image.gatsbyImageData} alt={name || ''} />
+          </ImageLink>
+        ) : (
+          <Image image={image.gatsbyImageData} alt={name || ''} />
+        ))}
+      {url && name && (
+        <Name href={url} target="_blank" rel="noreferrer">
+          {name}
+        </Name>
+      )}
+      <Desc>{desc}</Desc>
+    </AstroItem>
+  );
+};
