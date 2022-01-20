@@ -1,7 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Images } from '../constants/Images';
-import { MarkdownRemark } from '../graphql';
 
 const Container = styled.div`
   display: grid;
@@ -20,20 +19,6 @@ const Bg = styled.img`
   height: 100%;
   width: 100%;
   object-fit: cover;
-`;
-
-const Line1 = styled.div`
-  position: absolute;
-  left: 14%;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: #fff;
-  opacity: 0.1;
-  display: none;
-  @media (min-width: 768px) {
-    display: block;
-  }
 `;
 
 const ContentGrid = styled.div`
@@ -62,20 +47,13 @@ const MainContent = styled.div`
   }
 `;
 
-const SideBlock = styled.div`
-  display: grid;
-  align-content: center;
-  @media (min-width: 768px) {
-    grid-column: 5 / span 2;
-  }
-`;
-
 const Title = styled.h3`
   font-family: 'Lato';
   color: #e20900;
   margin: 0;
   text-transform: uppercase;
   font-size: 30px;
+  margin-bottom: 40px;
   @media (min-width: 768px) {
     font-size: 45px;
   }
@@ -84,94 +62,57 @@ const Title = styled.h3`
   }
 `;
 
-const TypeItem = styled.p`
+const SubTitle = styled.h3`
   font-family: 'Lato';
   color: #cccccc;
-  line-height: 32px;
-  span {
-    color: #ffffff;
-  }
-`;
-
-const TypeHtml = styled.div`
-  font-family: 'Lato';
-  color: #cccccc;
-  line-height: 32px;
-  span {
-    color: #ffffff;
-  }
+  font-size: 14px;
+  font-weight: 400;
+  margin: 20px 0 20px;
 `;
 
 const Content = styled.div`
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
   @media (min-width: 768px) {
     padding-right: 20%;
   }
 `;
 
-const SideItem = styled.div`
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 25px 0 35px;
+const StyledIframe = styled.iframe`
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 `;
 
-const TypeLink = styled.a`
-  color: #e20900;
-  text-decoration: none;
-  @media (hover: hover) {
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`;
-
-type SpaceflightProps = {
-  copyNodes: MarkdownRemark[];
-};
-
-export const Spaceflight = ({ copyNodes }: SpaceflightProps) => {
-  const [html, setHtml] = useState('');
-  const init = useCallback(() => {
-    const node = copyNodes.find(
-      (nodes) => nodes?.frontmatter?.title === 'Spaceflight',
-    );
-    const newHtml = node?.html ?? '';
-    setHtml(newHtml);
-  }, [copyNodes]);
-  useEffect(init, [init]);
+export const Spaceflight = () => {
   return (
     <Container>
       <Bg src={Images.SpaceFlightBg} alt="" />
-      <Line1 />
       <ContentGrid>
         <TypeBlock>
           <MainContent>
-            <Title>Spaceflight</Title>
+            <Title>Lift Off</Title>
+            <SubTitle>
+              $MUSK Gold &ldquo;The Gold of the Galaxy&rdquo; Commercial
+            </SubTitle>
             <Content>
-              <TypeHtml dangerouslySetInnerHTML={{ __html: html }} />
+              <StyledIframe
+                src="https://www.youtube.com/embed/GW6zC5ltoUM?enablejsapi=1&origin=https://www.musk.gold/"
+                title="Prepare to Launch"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                frameBorder="0"
+                width="480"
+                height="360"
+                allowFullScreen
+              />
             </Content>
           </MainContent>
         </TypeBlock>
-        <SideBlock>
-          <SideItem>
-            <TypeItem>
-              Follow
-              <br />
-              <TypeLink href="https://twitter.com/ElonMusk">
-                @ElonMusk
-              </TypeLink>{' '}
-              on Twitter
-            </TypeItem>
-          </SideItem>
-          <SideItem>
-            <TypeItem>
-              Follow
-              <br />
-              <TypeLink href="https://twitter.com/MuskGold">
-                @MuskGold
-              </TypeLink>{' '}
-              on Twitter
-            </TypeItem>
-          </SideItem>
-        </SideBlock>
       </ContentGrid>
     </Container>
   );

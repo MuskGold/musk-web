@@ -68,7 +68,7 @@ export default ({ data }: QueryProps) => {
         <LaunchPrep />
       </Section>
       <Section id="spaceflight" ref={spaceflightRef}>
-        <Spaceflight copyNodes={copyNodes} />
+        <Spaceflight />
       </Section>
       <Section id="flightpath" ref={flightpathRef}>
         <FlightPath />

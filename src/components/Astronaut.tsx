@@ -5,9 +5,10 @@ import { AstronautsJson } from '../graphql';
 
 const AstroItem = styled.div`
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto 1fr;
   width: calc(50% - 10px);
   justify-content: center;
+  text-align: center;
   @media (min-width: 768px) {
     width: 150px;
   }
@@ -33,7 +34,11 @@ const Desc = styled.div`
   color: #fff;
   font-size: 11px;
   font-weight: 300;
+  align-self: center;
   justify-self: center;
+  span {
+    white-space: nowrap;
+  }
 `;
 
 const Image = styled(GatsbyImage)`
@@ -72,11 +77,14 @@ export const Astronaut = ({ astro }: AstronautProps) => {
           <Image image={image.gatsbyImageData} alt={name || ''} />
         ))}
       {url && name && (
-        <Name href={url} target="_blank" rel="noreferrer">
-          {name}
-        </Name>
+        <Name
+          href={url}
+          target="_blank"
+          rel="noreferrer"
+          dangerouslySetInnerHTML={{ __html: name }}
+        />
       )}
-      <Desc>{desc}</Desc>
+      {desc && <Desc dangerouslySetInnerHTML={{ __html: desc }} />}
     </AstroItem>
   );
 };

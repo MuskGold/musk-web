@@ -32,6 +32,9 @@ const ContentGrid = styled.div`
     padding: 0 5%;
   }
   @media (min-width: 1280px) {
+    padding: 0 7%;
+  }
+  @media (min-width: 1600px) {
     padding: 0 15%;
   }
 `;

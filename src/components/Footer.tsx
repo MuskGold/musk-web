@@ -189,6 +189,9 @@ export const Footer = ({ setIsScroll }: FooterProps) => {
             <SocialLink href="https://www.instagram.com/muskgoldcrypto/">
               Instagram
             </SocialLink>
+            <SocialLink href="https://www.youtube.com/channel/UC90sPv4ZqC4feTcj57A329A">
+              YouTube
+            </SocialLink>
             {/* <SocialLink href="#">Medium</SocialLink> */}
             <SocialLink href="https://www.facebook.com/Muskgoldcrypto/">
               Facebook

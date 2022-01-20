@@ -1,7 +1,7 @@
 [
   {
     "name": "Zack Stentz",
-    "desc": "Screenwriter-Author/Producer",
+    "desc": "Screenwriter-Author / Producer",
     "url": "https://twitter.com/musezack",
     "image": "../images/zack-stentz.png"
   },
@@ -12,10 +12,10 @@
     "image": "../images/mark-jeffrey.png"
   },
   {
-    "name": "",
-    "desc": "",
-    "url": "",
-    "image": "../images/empty-helmet.png"
+    "name": "Shira Lazar",
+    "desc": "<span>On-Air Personality</span> / <span>Media Entrepreneur</span>",
+    "url": "https://twitter.com/shiralazar",
+    "image": "../images/shira-lazar.png"
   },
   {
     "name": "",
