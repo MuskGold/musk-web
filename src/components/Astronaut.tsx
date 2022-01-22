@@ -52,6 +52,7 @@ const Image = styled(GatsbyImage)`
 const ImageLink = styled.a`
   display: block;
   width: 150px;
+  justify-self: center;
   @media (min-width: 1280px) {
     width: 170px;
   }

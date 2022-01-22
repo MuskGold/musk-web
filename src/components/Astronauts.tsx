@@ -98,23 +98,21 @@ type AstronautsProps = {
   astroData: AstronautsJson[];
 };
 
-export const Astronauts = ({ astroData }: AstronautsProps) => {
-  return (
-    <Container>
-      <Bg src={Images.AstronautsBg} alt="" />
-      <ContentGrid>
-        <CenterBlock>
-          <MainContent>
-            <Title>Astronauts</Title>
-            <SubTitle>Advisors for our Mission to Mars</SubTitle>
-            <AstroGrid>
-              {astroData.map((astro) => (
-                <Astronaut key={astro.id} astro={astro} />
-              ))}
-            </AstroGrid>
-          </MainContent>
-        </CenterBlock>
-      </ContentGrid>
-    </Container>
-  );
-};
+export const Astronauts = ({ astroData }: AstronautsProps) => (
+  <Container>
+    <Bg src={Images.AstronautsBg} alt="" />
+    <ContentGrid>
+      <CenterBlock>
+        <MainContent>
+          <Title>Astronauts</Title>
+          <SubTitle>Advisors for our Mission to Mars</SubTitle>
+          <AstroGrid>
+            {astroData.map((astro) => (
+              <Astronaut key={astro.id} astro={astro} />
+            ))}
+          </AstroGrid>
+        </MainContent>
+      </CenterBlock>
+    </ContentGrid>
+  </Container>
+);
