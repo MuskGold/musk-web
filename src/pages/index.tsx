@@ -98,7 +98,7 @@ export const pageQuery = graphql`
         url
         image {
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(placeholder: NONE, layout: FULL_WIDTH)
           }
         }
       }
