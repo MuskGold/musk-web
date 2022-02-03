@@ -186,16 +186,19 @@ export const Footer = ({ setIsScroll }: FooterProps) => {
             </SocialLink>
           </LinkSet>
           <LinkSet>
-            <SocialLink href="https://www.instagram.com/muskgoldcrypto/">
+            <ExtraLink href="https://rush.musk.gold">
+              Gold Rush Rewards
+            </ExtraLink>
+            <ExtraLink href="https://shop.musk.gold">Shop</ExtraLink>
+            <ExtraLink href="https://www.instagram.com/muskgoldcrypto/">
               Instagram
-            </SocialLink>
-            <SocialLink href="https://www.youtube.com/channel/UC90sPv4ZqC4feTcj57A329A">
+            </ExtraLink>
+            <ExtraLink href="https://www.youtube.com/channel/UC90sPv4ZqC4feTcj57A329A">
               YouTube
-            </SocialLink>
-            {/* <SocialLink href="#">Medium</SocialLink> */}
-            <SocialLink href="https://www.facebook.com/Muskgoldcrypto/">
+            </ExtraLink>
+            <ExtraLink href="https://www.facebook.com/Muskgoldcrypto/">
               Facebook
-            </SocialLink>
+            </ExtraLink>
           </LinkSet>
           <LinkSet>
             <ExtraLink href="https://github.com/MuskGold/musk-whitepaper">
