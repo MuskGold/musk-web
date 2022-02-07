@@ -6,8 +6,8 @@ import { ParticleEmitter } from './ParticleEmitter';
 
 const RocketFire = () => (
   <Stage
-    width={360}
-    height={300}
+    width={720}
+    height={600}
     options={{ transparent: true, resolution: 2 }}
     onMount={(app) => {
       app.renderer.plugins.interaction.autoPreventDefault = false;
@@ -15,8 +15,10 @@ const RocketFire = () => (
     }}
   >
     <ParticleEmitter
-      x={180}
-      y={42}
+      x={360}
+      y={84}
+      width={180}
+      height={150}
       image={Images.Particle}
       config={emitterConfig}
     />

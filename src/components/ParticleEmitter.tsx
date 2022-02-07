@@ -28,7 +28,7 @@ export const ParticleEmitter = PixiComponent<
   ) {
     const { image, config, ...newP } = newProps;
     applyDefaultProps(instance, oldProps, newP);
-    let emitter = ((this as unknown) as RefProps)._emitter;
+    let emitter = (this as unknown as RefProps)._emitter;
     if (!emitter) {
       emitter = new particles.Emitter(
         instance,
@@ -37,7 +37,7 @@ export const ParticleEmitter = PixiComponent<
       );
       let elapsed = performance.now();
       const tick = () => {
-        ((this as unknown) as RefProps)._raf = requestAnimationFrame(tick);
+        (this as unknown as RefProps)._raf = requestAnimationFrame(tick);
         const now = performance.now();
         emitter.update((now - elapsed) * 0.0003);
         elapsed = now;
@@ -45,12 +45,12 @@ export const ParticleEmitter = PixiComponent<
       emitter.emit = true;
       tick();
     }
-    ((this as unknown) as RefProps)._emitter = emitter;
+    (this as unknown as RefProps)._emitter = emitter;
   },
   willUnmount() {
-    if (((this as unknown) as RefProps)._emitter) {
-      ((this as unknown) as RefProps)._emitter.emit = false;
-      cancelAnimationFrame(((this as unknown) as RefProps)._raf);
+    if ((this as unknown as RefProps)._emitter) {
+      (this as unknown as RefProps)._emitter.emit = false;
+      cancelAnimationFrame((this as unknown as RefProps)._raf);
     }
   },
 });
