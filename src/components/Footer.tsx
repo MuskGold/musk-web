@@ -204,6 +204,9 @@ export const Footer = ({ setIsScroll }: FooterProps) => {
             <ExtraLink href="https://github.com/MuskGold/musk-whitepaper">
               Whitepaper
             </ExtraLink>
+            <ExtraLink href="https://coinmarketcap.com/currencies/musk-gold/">
+              CoinMarketCap
+            </ExtraLink>
             <ExtraLink href="https://www.coingecko.com/en/coins/musk-gold">
               CoinGecko
             </ExtraLink>
