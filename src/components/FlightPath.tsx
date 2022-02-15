@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { Images } from '../constants/Images';
 
@@ -197,49 +198,80 @@ const QLine = styled.div`
 `;
 
 export const FlightPath = () => {
+  const { t } = useTranslation();
   return (
     <Container>
       <Content>
         <ContentGrid>
           <TypeBlock>
-            <Title>Flight Path</Title>
-            <SubTitle>The time is now. We have lift off. </SubTitle>
-            <TypeItem>
-              This is a ROADMAP to the future. A brighter, more inclusive future
-              begins today — one where everyone can join in and become integral
-              as a collective force toward lifting the human consciousness to a
-              higher acknowledgement of the power of uniting with each other to
-              BE THE CHANGE.
-            </TypeItem>
+            <Title>{t('flightpath.title')}</Title>
+            <SubTitle>{t('flightpath.subTitle')}</SubTitle>
+            <TypeItem>{t('flightpath.desc')}</TypeItem>
             <YearTitle>2021</YearTitle>
             <Quarters>
               <Quarter>
                 <QTitle>Q1</QTitle>
                 <QList>
-                  <QItem>Initial Creation of $Musk Gold</QItem>
-                  <QItem>White Paper Draft v1</QItem>
+                  <QItem
+                    dangerouslySetInnerHTML={{
+                      __html: t('flightpath.items.y21.q1a'),
+                    }}
+                  />
+                  <QItem
+                    dangerouslySetInnerHTML={{
+                      __html: t('flightpath.items.y21.q1b'),
+                    }}
+                  />
                 </QList>
               </Quarter>
               <Quarter>
                 <QTitle>Q2</QTitle>
                 <QList>
-                  <QItem>Team Formation</QItem>
-                  <QItem>Website Design Begins</QItem>
+                  <QItem
+                    dangerouslySetInnerHTML={{
+                      __html: t('flightpath.items.y21.q2a'),
+                    }}
+                  />
+                  <QItem
+                    dangerouslySetInnerHTML={{
+                      __html: t('flightpath.items.y21.q2b'),
+                    }}
+                  />
                 </QList>
               </Quarter>
               <Quarter>
                 <QTitle>Q3</QTitle>
                 <QList>
-                  <QItem>Astronauts (aka Advisors) Panel formation</QItem>
-                  <QItem>Official Website Musk.Gold is Live</QItem>
+                  <QItem
+                    dangerouslySetInnerHTML={{
+                      __html: t('flightpath.items.y21.q3a'),
+                    }}
+                  />
+                  <QItem
+                    dangerouslySetInnerHTML={{
+                      __html: t('flightpath.items.y21.q3b'),
+                    }}
+                  />
                 </QList>
               </Quarter>
               <Quarter>
                 <QTitle>Q4</QTitle>
                 <QList>
-                  <QItem>Musk Gold Token Creation</QItem>
-                  <QItem>Copper + Uniswap Launch</QItem>
-                  <QItem>White Paper Released</QItem>
+                  <QItem
+                    dangerouslySetInnerHTML={{
+                      __html: t('flightpath.items.y21.q4a'),
+                    }}
+                  />
+                  <QItem
+                    dangerouslySetInnerHTML={{
+                      __html: t('flightpath.items.y21.q4b'),
+                    }}
+                  />
+                  <QItem
+                    dangerouslySetInnerHTML={{
+                      __html: t('flightpath.items.y21.q4c'),
+                    }}
+                  />
                 </QList>
               </Quarter>
             </Quarters>
@@ -248,28 +280,56 @@ export const FlightPath = () => {
               <Quarter>
                 <QTitle>Q1</QTitle>
                 <QList>
-                  <QItem>Astronaut Announcements</QItem>
-                  <QItem>Rocketplace Dev Begins</QItem>
+                  <QItem
+                    dangerouslySetInnerHTML={{
+                      __html: t('flightpath.items.y22.q1a'),
+                    }}
+                  />
+                  <QItem
+                    dangerouslySetInnerHTML={{
+                      __html: t('flightpath.items.y22.q1b'),
+                    }}
+                  />
                 </QList>
               </Quarter>
               <Quarter>
                 <QTitle>Q2</QTitle>
                 <QList>
-                  <QItem>Musk NFT&apos;s Launch</QItem>
-                  <QItem>Partnerships Announcements</QItem>
+                  <QItem
+                    dangerouslySetInnerHTML={{
+                      __html: t('flightpath.items.y22.q2a'),
+                    }}
+                  />
+                  <QItem
+                    dangerouslySetInnerHTML={{
+                      __html: t('flightpath.items.y22.q2b'),
+                    }}
+                  />
                 </QList>
               </Quarter>
               <Quarter>
                 <QTitle>Q3</QTitle>
                 <QList>
-                  <QItem>Musk Gold App Launch</QItem>
+                  <QItem
+                    dangerouslySetInnerHTML={{
+                      __html: t('flightpath.items.y22.q3a'),
+                    }}
+                  />
                 </QList>
               </Quarter>
               <Quarter>
                 <QTitle>Q4</QTitle>
                 <QList>
-                  <QItem>Musk Gold Card Launch</QItem>
-                  <QItem>Space Flight Ticket Rewards</QItem>
+                  <QItem
+                    dangerouslySetInnerHTML={{
+                      __html: t('flightpath.items.y22.q4a'),
+                    }}
+                  />
+                  <QItem
+                    dangerouslySetInnerHTML={{
+                      __html: t('flightpath.items.y22.q4b'),
+                    }}
+                  />
                 </QList>
               </Quarter>
             </Quarters>

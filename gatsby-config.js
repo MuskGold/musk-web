@@ -34,6 +34,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `locale`,
+        path: `${__dirname}/locales`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-typescript`,
       options: {
         isTSX: true,
@@ -58,6 +65,23 @@ module.exports = {
       options: {
         fonts: [`Lato\:300,400,700,900`],
         display: 'swap',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        localeJsonSourceName: `locale`,
+        languages: [`en`, `zh_cn`, `zh_tw`],
+        defaultLanguage: `en`,
+        siteUrl: `https://www.musk.gold/`,
+        i18nextOptions: {
+          interpolation: {
+            escapeValue: false,
+          },
+          keySeparator: '.',
+          nsSeparator: false,
+        },
+        pages: [],
       },
     },
   ],

@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { Images } from '../constants/Images';
 import { MarkdownRemark } from '../graphql';
@@ -165,6 +166,7 @@ type MissionProps = {
 };
 
 export const Mission = ({ copyNodes }: MissionProps) => {
+  const { t } = useTranslation();
   const [html, setHtml] = useState('');
   const init = useCallback(() => {
     const node = copyNodes.find(
@@ -179,11 +181,7 @@ export const Mission = ({ copyNodes }: MissionProps) => {
       <Content>
         <ContentGrid>
           <TypeBlock>
-            <Title>
-              The
-              <br />
-              Mission
-            </Title>
+            <Title dangerouslySetInnerHTML={{ __html: t('mission.title') }} />
             <Hr />
             <TypeHtml dangerouslySetInnerHTML={{ __html: html }} />
           </TypeBlock>
@@ -191,7 +189,7 @@ export const Mission = ({ copyNodes }: MissionProps) => {
             <ImageInset>
               <JezeroImage src={Images.JezeroCrater} alt="Jezero Crater" />
               <RedBar />
-              <Info>{`// Angle on Jezero Crater`}</Info>
+              <Info>{t('mission.image')}</Info>
             </ImageInset>
           </SideBlock>
         </ContentGrid>

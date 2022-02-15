@@ -1,5 +1,6 @@
 ---
 title: Terms
+language: en
 ---
 **$MUSK Gold** (“$MUSK”) is a digital representation of value that functions as a medium of exchange, a unit of account, or a store of value, but it does not have legal tender status. $MUSK is a fully launched and developed commodity designed to be used: (1) in digital outer space or other virtual reality platforms and metaverses; (2) alternate reality video games; and (3) non-fungible token marketplaces.
 

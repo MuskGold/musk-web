@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { Images } from '../constants/Images';
 
@@ -90,16 +91,17 @@ const StyledIframe = styled.iframe`
 `;
 
 export const Spaceflight = () => {
+  const { t } = useTranslation();
   return (
     <Container>
       <Bg src={Images.SpaceFlightBg} alt="" />
       <ContentGrid>
         <TypeBlock>
           <MainContent>
-            <Title>Lift Off</Title>
-            <SubTitle>
-              $MUSK Gold &ldquo;The Gold of the Galaxy&rdquo; Commercial
-            </SubTitle>
+            <Title>{t('spaceflight.title')}</Title>
+            <SubTitle
+              dangerouslySetInnerHTML={{ __html: t('spaceflight.subTitle') }}
+            />
             <Content>
               <StyledIframe
                 src="https://www.youtube.com/embed/GW6zC5ltoUM?enablejsapi=1&origin=https://www.musk.gold/"

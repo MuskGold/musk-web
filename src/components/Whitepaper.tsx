@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useInView } from 'react-intersection-observer';
 import { useMedia } from 'react-use';
 import styled from 'styled-components';
@@ -173,6 +174,7 @@ const Line2 = styled.div`
 `;
 
 export const Whitepaper = () => {
+  const { t } = useTranslation();
   const { ref, inView } = useInView({ triggerOnce: true });
   const [posterUrl, setPosterUrl] = useState('');
   const [videoUrl, setVideoUrl] = useState('');
@@ -213,7 +215,7 @@ export const Whitepaper = () => {
       <Line1 />
       <Line2 />
       <LeftBlock>
-        <LeftText>White Paper</LeftText>
+        <LeftText>{t('whitepaper.title')}</LeftText>
       </LeftBlock>
       <RightBlock>
         <RightContent>
@@ -222,7 +224,7 @@ export const Whitepaper = () => {
             <Chevron />
           </DownloadArrow>
           <RightText href="https://github.com/MuskGold/musk-whitepaper">
-            Download White Paper PDF.
+            {t('whitepaper.download')}
           </RightText>
         </RightContent>
       </RightBlock>

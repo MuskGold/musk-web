@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { Images } from '../constants/Images';
 import { AstronautsJson } from '../graphql';
@@ -98,21 +99,24 @@ type AstronautsProps = {
   astroData: AstronautsJson[];
 };
 
-export const Astronauts = ({ astroData }: AstronautsProps) => (
-  <Container>
-    <Bg src={Images.AstronautsBg} alt="" />
-    <ContentGrid>
-      <CenterBlock>
-        <MainContent>
-          <Title>Astronauts</Title>
-          <SubTitle>Advisors for our Mission to Mars</SubTitle>
-          <AstroGrid>
-            {astroData.map((astro) => (
-              <Astronaut key={astro.id} astro={astro} />
-            ))}
-          </AstroGrid>
-        </MainContent>
-      </CenterBlock>
-    </ContentGrid>
-  </Container>
-);
+export const Astronauts = ({ astroData }: AstronautsProps) => {
+  const { t } = useTranslation();
+  return (
+    <Container>
+      <Bg src={Images.AstronautsBg} alt="" />
+      <ContentGrid>
+        <CenterBlock>
+          <MainContent>
+            <Title>{t('astronauts.title')}</Title>
+            <SubTitle>{t('astronauts.subTitle')}</SubTitle>
+            <AstroGrid>
+              {astroData.map((astro) => (
+                <Astronaut key={astro.id} astro={astro} />
+              ))}
+            </AstroGrid>
+          </MainContent>
+        </CenterBlock>
+      </ContentGrid>
+    </Container>
+  );
+};
