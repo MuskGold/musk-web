@@ -175,9 +175,25 @@ export const Footer = ({ setIsScroll }: FooterProps) => {
               <LinkImage src={Images.SocialTwitter} alt="Musk Gold Twitter" />
               Twitter
             </SocialLink>
-            <SocialLink href="https://t.me/muskgold" title="Musk Gold Telegram">
-              <LinkImage src={Images.SocialTelegram} alt="Musk Gold Telegram" />
-              Telegram
+            <SocialLink
+              href="https://t.me/MuskGold"
+              title="Musk Gold English Telegram"
+            >
+              <LinkImage
+                src={Images.SocialTelegram}
+                alt="Musk Gold English Telegram"
+              />
+              Telegram English
+            </SocialLink>
+            <SocialLink
+              href="https://t.me/MuskGoldChinese"
+              title="Musk Gold Chinese Telegram"
+            >
+              <LinkImage
+                src={Images.SocialTelegram}
+                alt="Musk Gold Chinese Telegram"
+              />
+              Telegram Chinese
             </SocialLink>
             <SocialLink
               href="https://www.reddit.com/r/Muskgold/"
