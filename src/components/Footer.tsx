@@ -243,7 +243,10 @@ export const Footer = ({ setIsScroll }: FooterProps) => {
               {t('footer.whitepaper')}
             </ExtraLink>
             <InternalLink to="/privacy/">{t('footer.privacy')}</InternalLink>
-            <InternalLink to="/terms/">{t('footer.terms')}</InternalLink>
+            <InternalLink
+              to="/terms/"
+              dangerouslySetInnerHTML={{ __html: t('footer.terms') }}
+            />
             <ExtraLink href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%69%6E%66%6F%40%6D%75%73%6B%2E%67%6F%6C%64">
               {t('footer.contact')}
             </ExtraLink>
