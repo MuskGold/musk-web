@@ -9,6 +9,7 @@ import React, {
   useEffect,
   useRef,
 } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useMedia } from 'react-use';
 import styled from 'styled-components';
 import { Images } from '../constants/Images';
@@ -105,6 +106,7 @@ type NavBarProps = {
 };
 
 export const NavBar = ({ snapRef, anchors, setIsScroll }: NavBarProps) => {
+  const { t } = useTranslation();
   const tween = useRef<gsap.core.Tween | null>(null);
   const isSnap = useMedia('(min-width: 768px) and (min-height: 800px)');
 
@@ -152,21 +154,19 @@ export const NavBar = ({ snapRef, anchors, setIsScroll }: NavBarProps) => {
       <NavContent>
         <NavLinks>
           <NavLink href="#mission" onClick={scrollTo}>
-            The Mission
+            {t('navbar.mission')}
           </NavLink>
           <NavLink href="#whitepaper" onClick={scrollTo}>
-            White paper
+            {t('navbar.whitepaper')}
           </NavLink>
           <NavLink href="#launchprep" onClick={scrollTo}>
-            Launch Prep
+            {t('navbar.launchprep')}
           </NavLink>
           <NavLink href="#spaceflight" onClick={scrollTo}>
-            Space
-            <wbr />
-            flight
+            {t('navbar.spaceflight')}
           </NavLink>
           <NavLink href="#flightpath" onClick={scrollTo}>
-            Flight Path
+            {t('navbar.flightpath')}
           </NavLink>
         </NavLinks>
       </NavContent>

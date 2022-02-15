@@ -8,7 +8,7 @@ const RocketFire = () => (
   <Stage
     width={720}
     height={600}
-    options={{ transparent: true, resolution: 2 }}
+    options={{ backgroundAlpha: 0, resolution: 2 }}
     onMount={(app) => {
       app.renderer.plugins.interaction.autoPreventDefault = false;
       app.renderer.view.style.touchAction = 'auto';

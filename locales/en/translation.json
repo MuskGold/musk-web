@@ -1,0 +1,77 @@
+{
+  "navbar": {
+    "mission": "The Mission",
+    "whitepaper": "White paper",
+    "launchprep": "Launch Prep",
+    "spaceflight": "Space Flight",
+    "flightpath": "Flight Path"
+  },
+  "mission": {
+    "title": "The<br />Mission",
+    "image": "// Angle on Jezero Crater"
+  },
+  "whitepaper": {
+    "title": "White Paper",
+    "download": "Download White Paper PDF."
+  },
+  "launchprep": {
+    "title": "Prepare to launch",
+    "acquire1": "How To Acquire $Musk Gold on Uniswap",
+    "acquire2": "Complete Guide",
+    "countdown": "Countdown to Launch",
+    "inst5a": "Get a",
+    "inst4a": "Go to",
+    "inst4b": "and prepare to swap",
+    "inst3": "Connect your MetaMask Wallet to Uniswap",
+    "inst2": "Swap your Ethereum for MUSK Gold",
+    "inst1": "You are now ready for Spaceflight",
+    "contract": "Contract"
+  },
+  "spaceflight": {
+    "title": "Space Flight",
+    "subTitle": "$MUSK Gold &ldquo;The Gold of the Galaxy&rdquo; Commercial"
+  },
+  "flightpath": {
+    "title": "Flight Path",
+    "subTitle": "The time is now. We have lift off.",
+    "desc": "This is a ROADMAP to the future. A brighter, more inclusive future begins today — one where everyone can join in and become integral as a collective force toward lifting the human consciousness to a higher acknowledgement of the power of uniting with each other to BE THE CHANGE.",
+    "items": {
+      "y21": {
+        "q1a": "Initial Creation of $Musk Gold",
+        "q1b": "White Paper Draft v1",
+        "q2a": "Team Formation",
+        "q2b": "Website Design Begins",
+        "q3a": "Astronauts (aka Advisors) Panel formation",
+        "q3b": "Official Website Musk.Gold is Live",
+        "q4a": "Musk Gold Token Creation",
+        "q4b": "Copper + Uniswap Launch",
+        "q4c": "White Paper Released"
+      },
+      "y22": {
+        "q1a": "Astronaut Announcements",
+        "q1b": "Rocketplace Dev Begins",
+        "q2a": "Musk NFT&apos;s Launch",
+        "q2b": "Partnerships Announcements",
+        "q3a": "Musk Gold App Launch",
+        "q4a": "Musk Gold Card Launch",
+        "q4b": "Space Flight Ticket Rewards"
+      }
+    }
+  },
+  "astronauts": {
+    "title": "Astronauts",
+    "subTitle": "Advisors for our Mission to Mars"
+  },
+  "terms": {
+    "title": "Terms and Risk Disclosure"
+  },
+  "privacy": {
+    "title": "Privacy Policy"
+  },
+  "footer": {
+    "whitepaper": "Whitepaper",
+    "privacy": "Privacy Policy",
+    "terms": "Terms &amp; Risk Disclosure",
+    "contact": "Contact Us"
+  }
+}

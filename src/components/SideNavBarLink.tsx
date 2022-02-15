@@ -82,9 +82,10 @@ export const SideNavBarLink = ({
       });
     }
     return () => {
+      inViewRef(null);
       tween.current?.kill();
     };
-  }, [setIsScroll, snapRef]);
+  }, [inViewRef, setIsScroll, snapRef]);
 
   const viewUpdate = useCallback(() => {
     inViewRef(section.current);

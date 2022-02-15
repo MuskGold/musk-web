@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { Layout } from '../components/Layout';
 import { MiniNavBar } from '../components/MiniNavBar';
@@ -51,22 +52,19 @@ const TypeHtml = styled.div`
 `;
 
 export default ({ data }: QueryProps) => {
+  const { t } = useTranslation();
   const node = data.allMarkdownRemark.nodes[0];
   const html = node.html ?? '';
   return (
     <Layout>
-      <Helmet title="Privacy Policy" />
+      <Helmet title={t('privacy.title')} />
       <MiniNavBar />
       <MiniSplash />
       <Container>
         <Content>
           <ContentGrid>
             <TypeBlock>
-              <Title>
-                Privacy
-                <br />
-                Policy
-              </Title>
+              <Title>{t('privacy.title')}</Title>
               <TypeHtml dangerouslySetInnerHTML={{ __html: html }} />
             </TypeBlock>
           </ContentGrid>
@@ -77,9 +75,23 @@ export default ({ data }: QueryProps) => {
 };
 
 export const pageQuery = graphql`
-  query {
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     allMarkdownRemark(
-      filter: { frontmatter: { title: { eq: "Privacy Policy" } } }
+      filter: {
+        frontmatter: {
+          title: { eq: "Privacy Policy" }
+          language: { eq: $language }
+        }
+      }
     ) {
       nodes {
         html

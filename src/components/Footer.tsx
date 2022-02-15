@@ -1,4 +1,4 @@
-import { Link } from 'gatsby';
+import { Link } from 'gatsby-plugin-react-i18next';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import React, {
@@ -8,9 +8,11 @@ import React, {
   useCallback,
   useRef,
 } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useMedia } from 'react-use';
 import styled from 'styled-components';
 import { Images } from '../constants/Images';
+import { LangSelect } from './LangSelect';
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -46,12 +48,25 @@ const Grid = styled.div`
   }
 `;
 
+const CopyGrid = styled.div`
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  border-top: 1px solid #535557;
+  padding: 40px 0 0;
+  margin-top: 40px;
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr auto;
+  }
+`;
+
 const CopyRight = styled.div`
   color: #939fa9;
   font-family: 'Lato';
-  margin-top: 40px;
-  border-top: 1px solid #535557;
-  padding: 40px 0 0;
+  text-align: center;
+  @media (min-width: 768px) {
+    text-align: left;
+  }
 `;
 
 const FooterIcon = styled.img`
@@ -117,6 +132,7 @@ type FooterProps = {
 };
 
 export const Footer = ({ setIsScroll }: FooterProps) => {
+  const { t } = useTranslation();
   const tween = useRef<gsap.core.Tween | null>(null);
   const isSnap = useMedia('(min-width: 768px) and (min-height: 800px)');
   const onClick = useCallback(
@@ -159,9 +175,25 @@ export const Footer = ({ setIsScroll }: FooterProps) => {
               <LinkImage src={Images.SocialTwitter} alt="Musk Gold Twitter" />
               Twitter
             </SocialLink>
-            <SocialLink href="https://t.me/muskgold" title="Musk Gold Telegram">
-              <LinkImage src={Images.SocialTelegram} alt="Musk Gold Telegram" />
-              Telegram
+            <SocialLink
+              href="https://t.me/MuskGold"
+              title="Musk Gold English Telegram"
+            >
+              <LinkImage
+                src={Images.SocialTelegram}
+                alt="Musk Gold English Telegram"
+              />
+              Telegram English
+            </SocialLink>
+            <SocialLink
+              href="https://t.me/MuskGoldChinese"
+              title="Musk Gold Chinese Telegram"
+            >
+              <LinkImage
+                src={Images.SocialTelegram}
+                alt="Musk Gold Chinese Telegram"
+              />
+              Telegram Chinese
             </SocialLink>
             <SocialLink
               href="https://www.reddit.com/r/Muskgold/"
@@ -201,28 +233,29 @@ export const Footer = ({ setIsScroll }: FooterProps) => {
             </ExtraLink>
           </LinkSet>
           <LinkSet>
-            <ExtraLink href="https://github.com/MuskGold/musk-whitepaper">
-              Whitepaper
-            </ExtraLink>
             <ExtraLink href="https://coinmarketcap.com/currencies/musk-gold/">
               CoinMarketCap
             </ExtraLink>
             <ExtraLink href="https://www.coingecko.com/en/coins/musk-gold">
               CoinGecko
             </ExtraLink>
-            <InternalLink to="/privacy/">Privacy Policy</InternalLink>
-            <InternalLink to="/terms/">
-              Terms &amp; Risk Disclosure
-            </InternalLink>
+            <ExtraLink href="https://github.com/MuskGold/musk-whitepaper">
+              {t('footer.whitepaper')}
+            </ExtraLink>
+            <InternalLink to="/privacy/">{t('footer.privacy')}</InternalLink>
+            <InternalLink to="/terms/">{t('footer.terms')}</InternalLink>
             <ExtraLink href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%69%6E%66%6F%40%6D%75%73%6B%2E%67%6F%6C%64">
-              Contact Us
+              {t('footer.contact')}
             </ExtraLink>
           </LinkSet>
         </Grid>
-        <CopyRight>
-          &copy; 2022 Intergalactic Decentralized Gold Autonomous Financials,
-          Inc.
-        </CopyRight>
+        <CopyGrid>
+          <CopyRight>
+            &copy; 2022 Intergalactic Decentralized Gold Autonomous Financials,
+            Inc.
+          </CopyRight>
+          <LangSelect />
+        </CopyGrid>
       </Content>
     </Container>
   );

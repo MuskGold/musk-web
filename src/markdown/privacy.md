@@ -1,5 +1,6 @@
 ---
 title: Privacy Policy
+language: en
 ---
 **Updated at 2021-11-27**
 

@@ -1,0 +1,77 @@
+{
+  "navbar": {
+    "mission": "使命",
+    "whitepaper": "白皮书",
+    "launchprep": "启动准备",
+    "spaceflight": "航天",
+    "flightpath": "飞行路径"
+  },
+  "mission": {
+    "title": "使命",
+    "image": "// Jezero陨石坑的角度"
+  },
+  "whitepaper": {
+    "title": "白皮书",
+    "download": "下载白皮书 PDF。"
+  },
+  "launchprep": {
+    "title": "准备发射",
+    "acquire1": "如何在 Uniswap 上获取 $Musk Gold",
+    "acquire2": "完整指南",
+    "countdown": "发射倒计时",
+    "inst5a": "获取",
+    "inst4a": "去",
+    "inst4b": "并准备交换",
+    "inst3": "将您的 MetaMask 钱包连接到 Uniswap",
+    "inst2": "用你的 Ethereum 换取 MUSK Gold",
+    "inst1": "您现在已准备好进行太空飞行",
+    "contract": "合同"
+  },
+  "spaceflight": {
+    "title": "航天",
+    "subTitle": "$MUSK Gold&ldquo;银河之金&rdquo; 商业的"
+  },
+  "flightpath": {
+    "title": "飞行路径",
+    "subTitle": "就是现在。 我们起飞了。",
+    "desc": "这是未来的路线图。 一个更光明、更具包容性的未来从今天开始——每个人都可以加入并成为一股不可分割的集体力量，以提升人类意识，更高地承认彼此团结以成为变革的力量。",
+    "items": {
+      "y21": {
+        "q1a": "最初创建 $Musk Gold",
+        "q1b": "白皮书草案 v1",
+        "q2a": "团队组建",
+        "q2b": "网站设计开始",
+        "q3a": "宇航员（又名顾问）小组组建",
+        "q3b": "官方网站 Musk.Gold 上线了",
+        "q4a": "麝香金代币创建",
+        "q4b": "铜 + Uniswap 推出",
+        "q4c": "白皮书发布d"
+      },
+      "y22": {
+        "q1a": "宇航员公告",
+        "q1b": "Rocketplace 开发开始",
+        "q2a": "马斯克 NFT 的发布",
+        "q2b": "合作伙伴公告",
+        "q3a": "麝香黄金应用程序发布",
+        "q4a": "麝香金卡发布",
+        "q4b": "太空飞行机票奖励"
+      }
+    }
+  },
+  "astronauts": {
+    "title": "宇航员",
+    "subTitle": "我们火星任务的顾问"
+  },
+  "terms": {
+    "title": "条款和风险披露"
+  },
+  "privacy": {
+    "title": "隐私政策"
+  },
+  "footer": {
+    "whitepaper": "白皮书",
+    "privacy": "隐私政策",
+    "terms": "条款和风险披露",
+    "contact": "联系我们"
+  }
+}

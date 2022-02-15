@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -266,78 +267,81 @@ const ContractLink = styled.a`
   }
 `;
 
-export const LaunchPrep = () => (
-  <Container>
-    <TopBars>
-      <TopLeftBar />
-      <TopRightBar />
-    </TopBars>
-    <TitleBlock>
-      <Title>Prepare to launch</Title>
-      <TitleBar />
-    </TitleBlock>
-    <ContentGrid>
-      <GrayBar />
-      <MainCol>
-        <LaunchImage>
-          <StyledIframe
-            src="https://www.youtube.com/embed/8fXRKCwBBG8?enablejsapi=1&origin=https://www.musk.gold/"
-            title="Prepare to Launch"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            frameBorder="0"
-            width="480"
-            height="360"
-            allowFullScreen
-          />
-        </LaunchImage>
-        <TypeBlock>
-          <MainBar />
-          <TypeItem>
-            <TypeItemInfo>How To Acquire $Musk Gold on Uniswap</TypeItemInfo>{' '}
-            Complete Guide
-          </TypeItem>
-        </TypeBlock>
-      </MainCol>
-      <AltCol>
-        <AltGrid>
-          <AltTitle>Countdown to Launch</AltTitle>
-          <AltList reversed>
-            <AltItem>
-              Get a{' '}
-              <AltLink href="https://metamask.io/">MetaMask Wallet</AltLink>
-            </AltItem>
-            <AltItem>
-              Go to{' '}
-              <AltLink href="https://app.uniswap.org/#/swap?outputCurrency=0x6069c9223e8a5da1ec49ac5525d4bb757af72cd8">
-                app.uniswap.org
-              </AltLink>{' '}
-              and prepare to swap
-            </AltItem>
-            <AltItem>Connect your MetaMask Wallet to Uniswap</AltItem>
-            <AltItem>Swap your Ethereum for Musk Gold</AltItem>
-            <AltItem>You are now ready for Spaceflight</AltItem>
-          </AltList>
-          <Contract>
-            <ContractCode>
-              <ContractTitle>Contract:</ContractTitle>
-              <ContractInput
-                readOnly
-                value="0x6069c9223e8a5da1ec49ac5525d4bb757af72cd8"
-              />
-            </ContractCode>
-            <ContractLink
-              href="https://etherscan.io/address/0x6069c9223e8a5da1ec49ac5525d4bb757af72cd8"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Etherscan
-            </ContractLink>
-          </Contract>
-        </AltGrid>
-      </AltCol>
-      <FinCol>
-        <FinBar />
-      </FinCol>
-    </ContentGrid>
-  </Container>
-);
+export const LaunchPrep = () => {
+  const { t } = useTranslation();
+  return (
+    <Container>
+      <TopBars>
+        <TopLeftBar />
+        <TopRightBar />
+      </TopBars>
+      <TitleBlock>
+        <Title>{t('launchprep.title')}</Title>
+        <TitleBar />
+      </TitleBlock>
+      <ContentGrid>
+        <GrayBar />
+        <MainCol>
+          <LaunchImage>
+            <StyledIframe
+              src="https://www.youtube.com/embed/8fXRKCwBBG8?enablejsapi=1&origin=https://www.musk.gold/"
+              title="Prepare to Launch"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              frameBorder="0"
+              width="480"
+              height="360"
+              allowFullScreen
+            />
+          </LaunchImage>
+          <TypeBlock>
+            <MainBar />
+            <TypeItem>
+              <TypeItemInfo>{t('launchprep.acquire1')}</TypeItemInfo>{' '}
+              {t('launchprep.acquire2')}
+            </TypeItem>
+          </TypeBlock>
+        </MainCol>
+        <AltCol>
+          <AltGrid>
+            <AltTitle>{t('launchprep.countdown')}</AltTitle>
+            <AltList reversed>
+              <AltItem>
+                {t('launchprep.inst5a')}{' '}
+                <AltLink href="https://metamask.io/">MetaMask Wallet</AltLink>
+              </AltItem>
+              <AltItem>
+                {t('launchprep.inst4a')}{' '}
+                <AltLink href="https://app.uniswap.org/#/swap?outputCurrency=0x6069c9223e8a5da1ec49ac5525d4bb757af72cd8">
+                  app.uniswap.org
+                </AltLink>{' '}
+                {t('launchprep.inst4b')}
+              </AltItem>
+              <AltItem>{t('launchprep.inst3')}</AltItem>
+              <AltItem>{t('launchprep.inst2')}</AltItem>
+              <AltItem>{t('launchprep.inst1')}</AltItem>
+            </AltList>
+            <Contract>
+              <ContractCode>
+                <ContractTitle>{t('launchprep.contract')}:</ContractTitle>
+                <ContractInput
+                  readOnly
+                  value="0x6069c9223e8a5da1ec49ac5525d4bb757af72cd8"
+                />
+              </ContractCode>
+              <ContractLink
+                href="https://etherscan.io/address/0x6069c9223e8a5da1ec49ac5525d4bb757af72cd8"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Etherscan
+              </ContractLink>
+            </Contract>
+          </AltGrid>
+        </AltCol>
+        <FinCol>
+          <FinBar />
+        </FinCol>
+      </ContentGrid>
+    </Container>
+  );
+};
