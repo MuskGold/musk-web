@@ -176,6 +176,16 @@ export const Footer = ({ setIsScroll }: FooterProps) => {
               Twitter
             </SocialLink>
             <SocialLink
+              href="https://t.me/MuskGoldAnnouncements"
+              title="Musk Gold Announcements Telegram"
+            >
+              <LinkImage
+                src={Images.SocialTelegram}
+                alt="Musk Gold Announcements Telegram"
+              />
+              Announcements
+            </SocialLink>
+            <SocialLink
               href="https://t.me/MuskGold"
               title="Musk Gold English Telegram"
             >
