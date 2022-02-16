@@ -47,7 +47,19 @@ export default ({ data }: QueryProps) => {
   return (
     <SnapLayout ref={snapRef} isScroll={isScroll} setIsScroll={setIsScroll}>
       <Helmet>
+        <meta name="title" content="MUSK Gold" />
         <meta name="description" content="Gold of the Galaxy" />
+        <meta property="og:title" content="MUSK Gold" />
+        <meta property="og:description" content="Gold of the Galaxy" />
+        <meta
+          property="og:image"
+          content="https://www.musk.gold/musk-icon.png"
+        />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content="@MuskGold" />
+        <meta name="twitter:title" content="MUSK Gold" />
+        <meta name="twitter:description" content="Gold of the Galaxy" />
       </Helmet>
       <SideNavBar
         snapRef={snapRef}
