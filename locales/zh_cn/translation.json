@@ -65,6 +65,10 @@
   "terms": {
     "title": "条款和风险披露"
   },
+  "partners": {
+    "partnerships": "伙伴关系",
+    "exchanges": "交流"
+  },
   "privacy": {
     "title": "隐私政策"
   },

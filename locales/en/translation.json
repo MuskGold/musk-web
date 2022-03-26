@@ -65,6 +65,10 @@
   "terms": {
     "title": "Terms and Risk Disclosure"
   },
+  "partners": {
+    "partnerships": "Partnerships",
+    "exchanges": "Exchanges"
+  },
   "privacy": {
     "title": "Privacy Policy"
   },

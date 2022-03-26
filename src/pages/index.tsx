@@ -8,6 +8,7 @@ import { FlightPath } from '../components/FlightPath';
 import { LaunchPrep } from '../components/LaunchPrep';
 import { Mission } from '../components/Mission';
 import { NavBar } from '../components/NavBar';
+import { Partners } from '../components/Partners';
 import { SideNavBar } from '../components/SideNavBar';
 import { SnapLayout } from '../components/SnapLayout';
 import { Spaceflight } from '../components/Spaceflight';
@@ -23,6 +24,14 @@ const Section = styled.div`
   }
 `;
 
+const ShortSection = styled.div`
+  @media (min-width: 768px) and (min-height: 800px) {
+    position: relative;
+    height: 70vh;
+    scroll-snap-align: start;
+  }
+`;
+
 export default ({ data }: QueryProps) => {
   const [isScroll, setIsScroll] = useState(true);
   const snapRef = useRef<HTMLDivElement>(null);
@@ -33,6 +42,7 @@ export default ({ data }: QueryProps) => {
   const spaceflightRef = useRef<HTMLDivElement>(null);
   const flightpathRef = useRef<HTMLDivElement>(null);
   const astronautsRef = useRef<HTMLDivElement>(null);
+  const partnersRef = useRef<HTMLDivElement>(null);
   const anchors = {
     '#home': splashRef,
     '#mission': missionRef,
@@ -41,6 +51,7 @@ export default ({ data }: QueryProps) => {
     '#spaceflight': spaceflightRef,
     '#flightpath': flightpathRef,
     '#astronauts': astronautsRef,
+    '#partners': partnersRef,
   };
   const copyNodes = data.allMarkdownRemark.nodes;
   const astroData = data.allAstronautsJson.nodes;
@@ -88,6 +99,9 @@ export default ({ data }: QueryProps) => {
       <Section id="astronauts" ref={astronautsRef}>
         <Astronauts astroData={astroData} />
       </Section>
+      <ShortSection id="partners" ref={partnersRef}>
+        <Partners />
+      </ShortSection>
     </SnapLayout>
   );
 };
